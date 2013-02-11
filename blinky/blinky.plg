@@ -1,0 +1,52 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\395\blinky\blinky.uvproj
+Project File Date:  09/11/2012
+
+<h2>Output:</h2>
+Load "C:\\395\\blinky\\blinky.AXF" 
+Load "C:\\395\\blinky\\blinky.AXF" 
+Load "C:\\395\\blinky\\blinky.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Blinky'
+linking...
+Program Size: Code=1360 RO-data=300 RW-data=4 ZI-data=612  
+"blinky.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Blinky'
+compiling main.c...
+linking...
+Program Size: Code=1360 RO-data=300 RW-data=4 ZI-data=612  
+"blinky.axf" - 0 Error(s), 0 Warning(s).
+Rebuild target 'Blinky'
+assembling startup_LPC11xx.s...
+compiling system_LPC11xx.c...
+compiling main.c...
+linking...
+Program Size: Code=1360 RO-data=300 RW-data=4 ZI-data=612  
+"blinky.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\395\\blinky\\blinky.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "C:\\395\\blinky\\blinky.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Blinky'
+compiling main.c...
+linking...
+Program Size: Code=1360 RO-data=300 RW-data=4 ZI-data=612  
+"blinky.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\395\\blinky\\blinky.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "C:\\395\\blinky\\blinky.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.

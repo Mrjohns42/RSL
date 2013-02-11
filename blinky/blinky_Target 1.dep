@@ -1,0 +1,2 @@
+Dependencies for Project 'blinky', Target 'Target 1': (DO NOT MODIFY !)
+F (.\startup_LPC11xx.s)(0x4E9C94B0)(--cpu Cortex-M0 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\Inc -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\NXP\LPC11xx --list "startup_LPC11xx.lst" --xref -o "startup_LPC11xx.o" --depend "startup_LPC11xx.d")
