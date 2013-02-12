@@ -352,6 +352,11 @@ SoftwareSerial::~SoftwareSerial()
   end();
 }
 
+
+//
+// Public methods
+//
+
 void SoftwareSerial::setTX(uint8_t tx)
 {
   pinMode(tx, OUTPUT);
@@ -371,10 +376,6 @@ void SoftwareSerial::setRX(uint8_t rx)
   uint8_t port = digitalPinToPort(rx);
   _receivePortRegister = portInputRegister(port);
 }
-
-//
-// Public methods
-//
 
 void SoftwareSerial::begin(long speed)
 {

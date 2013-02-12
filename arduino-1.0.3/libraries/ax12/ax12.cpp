@@ -184,7 +184,7 @@ byte writeData (byte id, byte regstart, byte reglength, int value) {
     data [0] = regstart; data [1] = value&0xFF;
     if (reglength > 1) {data[2] = (value&0xFF00)>>8;}
     ax12SendPacket (id, reglength+1, AX_WRITE_DATA, data);
-	return ax12ReadPacket();
+    return ax12ReadPacket();
 }
 
 /** reg write */

@@ -67,11 +67,11 @@
 #include "WProgram.h"
 #endif
 
-#include "SoftwareSerial.h"
+#include "SoftwareSerialWithHalfDuplex.h"
 
 #include "DynamixelSoftSerial.h"
 
-extern SoftwareSerial SoftSerial(0,1);
+extern SoftwareSerialWithHalfDuplex SoftSerial(10,10,false,false);
 
 // Macro for the selection of the Serial Port
 

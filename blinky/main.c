@@ -27,11 +27,11 @@ int main()
 	while (1)
 	{
 		ledOn();
-		for (i = 0; i < 0x0007FFFF; i++)
+		for (i = 0; i < 0x000FFFFF; i++)
 		{
 		}
 		ledOff();
-		for (i = 0; i < 0x0007FFFF; i++)
+		for (i = 0; i < 0x000FFFFF; i++)
 		{
 		}
 	}

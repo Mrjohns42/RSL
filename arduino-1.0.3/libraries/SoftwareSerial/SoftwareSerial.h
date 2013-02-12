@@ -72,8 +72,7 @@ private:
   void recv();
   uint8_t rx_pin_read();
   void tx_pin_write(uint8_t pin_state);
-  void setTX(uint8_t transmitPin);
-  void setRX(uint8_t receivePin);
+
 
   // private static method for timing
   static inline void tunedDelay(uint16_t delay);
@@ -82,6 +81,10 @@ public:
   // public methods
   SoftwareSerial(uint8_t receivePin, uint8_t transmitPin, bool inverse_logic = false);
   ~SoftwareSerial();
+  
+  void setTX(uint8_t transmitPin);
+  void setRX(uint8_t receivePin);
+  
   void begin(long speed);
   bool listen();
   void end();
