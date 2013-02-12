@@ -1,4 +1,4 @@
-//move legs crazily
+
 
 
 #include <DynamixelSerial1.h>
