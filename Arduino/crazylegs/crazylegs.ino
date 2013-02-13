@@ -30,7 +30,7 @@ void setup(){
     {
        swSerial.print("  Error: ");swSerial.println(error);
     }
-    delay(1500);      
+    delay(1500);     
   }
   
 }

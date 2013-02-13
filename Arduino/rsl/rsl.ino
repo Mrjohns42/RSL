@@ -43,10 +43,33 @@ void dmpDataReady() {
 //== SETUP ==//
 void setup()
 {
-   swSerial.begin(9600);
+   swSerial.begin(115200);
    delay(500);
    swSerial.println("\r\n\r\n====ROCKEM SOCKEM LIVE!====\r\n");
    
+   //Setup Servos
+   Dynamixel.begin(1000000,2);
+   delay(500);  
+   swSerial.println("Testing AX-12 Servos:");
+   Dynamixel.torqueStatus(all, 1);
+   int errorstatus = 0;
+   for(int i=4; i < 8; i++)
+   {
+     int error = Dynamixel.move(i,512);
+     swSerial.print("  SERVO ");swSerial.print(i);
+     swSerial.print(" | Position: ");swSerial.print(512);
+     if (error > 0)
+     {
+        swSerial.print(" |  Error: ");swSerial.print(error);
+        errorstatus++;
+     }
+     swSerial.println("");
+     delay(20);     
+   }
+   swSerial.print("  Summary: ");
+   swSerial.print(errorstatus);swSerial.println(" SERVO ERRORS\r\n");
+   
+     
    //Setup MPU
    Wire.begin();
    delay(500);
@@ -80,31 +103,93 @@ void setup()
         swSerial.println(")");
     }
 
-   //Setup Servos
-   Dynamixel.begin(1000000,2);
-   delay(500);  
-   swSerial.println("Testing AX-12 Servos:");
-   int errorstatus = 0;
-   for(int i=4; i < 8; i++)
-   {
-     int error = Dynamixel.move(i,512);
-     swSerial.print("  SERVO ");swSerial.print(i);
-     swSerial.print(" | Position: ");swSerial.print(512);
-     if (error > 0)
-     {
-        swSerial.print(" |  Error: ");swSerial.print(error);
-        errorstatus++;
-     }
-     swSerial.println("");
-     delay(1500);     
-   }
-   swSerial.print("  Summary: ");
-   swSerial.print(errorstatus);swSerial.println(" SERVO ERRORS\r\n");
-   
-   
-    
-  
-  
+   //ready
+   /*
+   swSerial.println("READY: Send any character to begin demo.");
+   while (swSerial.available() && swSerial.read()); // empty buffer
+   while (!swSerial.available());                 // wait for data
+   while (swSerial.available() && swSerial.read()); // empty buffer again
+  */
 }
 
-void loop(){}
+
+//== LOOP ==//
+void loop() {
+    // if programming failed, don't try to do anything
+    if (!dmpReady)
+    {
+      swSerial.println("DMP not ready.");
+      return;  
+    }
+    
+
+    // wait for MPU interrupt or extra packet(s) available
+    while (!mpuInterrupt && fifoCount < packetSize) {
+        // other program behavior stuff here
+        // .
+        // .
+        // .
+        // if you are really paranoid you can frequently test in between other
+        // stuff to see if mpuInterrupt is true, and if so, "break;" from the
+        // while() loop to immediately process the MPU data
+        // .
+        // .
+        // .
+    }
+
+    // reset interrupt flag and get INT_STATUS byte
+    mpuInterrupt = false;
+    mpuIntStatus = mpu.getIntStatus();
+
+    // get current FIFO count
+    fifoCount = mpu.getFIFOCount();
+
+    // check for overflow (this should never happen unless our code is too inefficient)
+    if ((mpuIntStatus & 0x10) || fifoCount == 1024) {
+        // reset so we can continue cleanly
+        mpu.resetFIFO();
+        swSerial.println(F("FIFO overflow!"));
+
+    // otherwise, check for DMP data ready interrupt (this should happen frequently)
+    }
+    if (mpuIntStatus & 0x02) {
+        // wait for correct available data length, should be a VERY short wait
+        while (fifoCount < packetSize) fifoCount = mpu.getFIFOCount();
+
+        // read a packet from FIFO
+        mpu.getFIFOBytes(fifoBuffer, packetSize);
+        
+        // track FIFO count here in case there is > 1 packet available
+        // (this lets us immediately read more without waiting for an interrupt)
+        fifoCount -= packetSize;
+
+        #ifdef OUTPUT_READABLE_YAWPITCHROLL
+            // display Euler angles in degrees
+            mpu.dmpGetQuaternion(&q, fifoBuffer);
+            mpu.dmpGetGravity(&gravity, &q);
+            mpu.dmpGetYawPitchRoll(ypr, &q, &gravity);
+            swSerial.print("ypr\t");
+            swSerial.print(ypr[0] * 180/M_PI);
+            swSerial.print("\t");
+            swSerial.print(ypr[1] * 180/M_PI);
+            swSerial.print("\t");
+            swSerial.println(ypr[2] * 180/M_PI);
+        #endif
+        
+        int pitch = (int) ypr[1];
+        if(pitch > 90) pitch = 90;
+        if(pitch < 0) pitch = 0;
+        swSerial.println(512-pitch);
+        int error = Dynamixel.move(5, 512 - pitch);
+        if (error > 0)
+        {
+          swSerial.print("  Error: ");swSerial.println(error);
+        }
+        delay(20);
+
+       
+
+
+        
+    }
+}

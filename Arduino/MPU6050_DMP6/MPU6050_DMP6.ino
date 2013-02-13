@@ -50,6 +50,9 @@ THE SOFTWARE.
 #include "MPU6050_6Axis_MotionApps20.h"
 //#include "MPU6050.h" // not necessary if using MotionApps include file
 
+#include <SoftwareSerial.h>
+SoftwareSerial swSerial(10,11);
+
 // class default I2C address is 0x68
 // specific I2C addresses may be passed as a parameter here
 // AD0 low = 0x68 (default for SparkFun breakout and InvenSense evaluation board)
@@ -160,46 +163,40 @@ void setup() {
     // initialize serial communication
     // (115200 chosen because it is required for Teapot Demo output, but it's
     // really up to you depending on your project)
-    Serial.begin(115200);
-    while (!Serial); // wait for Leonardo enumeration, others continue immediately
-
-    // NOTE: 8MHz or slower host processors, like the Teensy @ 3.3v or Ardunio
-    // Pro Mini running at 3.3v, cannot handle this baud rate reliably due to
-    // the baud timing being too misaligned with processor ticks. You must use
-    // 38400 or slower in these cases, or use some kind of external separate
-    // crystal solution for the UART timer.
+    swSerial.begin(115200);
+    delay(1000);
 
     // initialize device
-    Serial.println(F("Initializing I2C devices..."));
+    swSerial.println(F("Initializing I2C devices..."));
     mpu.initialize();
 
     // verify connection
-    Serial.println(F("Testing device connections..."));
-    Serial.println(mpu.testConnection() ? F("MPU6050 connection successful") : F("MPU6050 connection failed"));
+    swSerial.println(F("Testing device connections..."));
+    swSerial.println(mpu.testConnection() ? F("MPU6050 connection successful") : F("MPU6050 connection failed"));
 
     // wait for ready
-    Serial.println(F("\nSend any character to begin DMP programming and demo: "));
-    while (Serial.available() && Serial.read()); // empty buffer
-    while (!Serial.available());                 // wait for data
-    while (Serial.available() && Serial.read()); // empty buffer again
+    swSerial.println(F("\nSend any character to begin DMP programming and demo: "));
+    while (swSerial.available() && swSerial.read()); // empty buffer
+    while (!swSerial.available());                 // wait for data
+    while (swSerial.available() && swSerial.read()); // empty buffer again
 
     // load and configure the DMP
-    Serial.println(F("Initializing DMP..."));
+    swSerial.println(F("Initializing DMP..."));
     devStatus = mpu.dmpInitialize();
     
     // make sure it worked (returns 0 if so)
     if (devStatus == 0) {
         // turn on the DMP, now that it's ready
-        Serial.println(F("Enabling DMP..."));
+        swSerial.println(F("Enabling DMP..."));
         mpu.setDMPEnabled(true);
 
         // enable Arduino interrupt detection
-        Serial.println(F("Enabling interrupt detection (Arduino external interrupt 0)..."));
+        swSerial.println(F("Enabling interrupt detection (Arduino external interrupt 0)..."));
         attachInterrupt(0, dmpDataReady, RISING);
         mpuIntStatus = mpu.getIntStatus();
 
         // set our DMP Ready flag so the main loop() function knows it's okay to use it
-        Serial.println(F("DMP ready! Waiting for first interrupt..."));
+        swSerial.println(F("DMP ready! Waiting for first interrupt..."));
         dmpReady = true;
 
         // get expected DMP packet size for later comparison
@@ -209,9 +206,9 @@ void setup() {
         // 1 = initial memory load failed
         // 2 = DMP configuration updates failed
         // (if it's going to break, usually the code will be 1)
-        Serial.print(F("DMP Initialization failed (code "));
-        Serial.print(devStatus);
-        Serial.println(F(")"));
+        swSerial.print(F("DMP Initialization failed (code "));
+        swSerial.print(devStatus);
+        swSerial.println(F(")"));
     }
 
     // configure LED for output
@@ -253,7 +250,7 @@ void loop() {
     if ((mpuIntStatus & 0x10) || fifoCount == 1024) {
         // reset so we can continue cleanly
         mpu.resetFIFO();
-        Serial.println(F("FIFO overflow!"));
+        swSerial.println(F("FIFO overflow!"));
 
     // otherwise, check for DMP data ready interrupt (this should happen frequently)
     } else if (mpuIntStatus & 0x02) {
@@ -270,26 +267,26 @@ void loop() {
         #ifdef OUTPUT_READABLE_QUATERNION
             // display quaternion values in easy matrix form: w x y z
             mpu.dmpGetQuaternion(&q, fifoBuffer);
-            Serial.print("quat\t");
-            Serial.print(q.w);
-            Serial.print("\t");
-            Serial.print(q.x);
-            Serial.print("\t");
-            Serial.print(q.y);
-            Serial.print("\t");
-            Serial.println(q.z);
+            swSerial.print("quat\t");
+            swSerial.print(q.w);
+            swSerial.print("\t");
+            swSerial.print(q.x);
+            swSerial.print("\t");
+            swSerial.print(q.y);
+            swSerial.print("\t");
+            swSerial.println(q.z);
         #endif
 
         #ifdef OUTPUT_READABLE_EULER
             // display Euler angles in degrees
             mpu.dmpGetQuaternion(&q, fifoBuffer);
             mpu.dmpGetEuler(euler, &q);
-            Serial.print("euler\t");
-            Serial.print(euler[0] * 180/M_PI);
-            Serial.print("\t");
-            Serial.print(euler[1] * 180/M_PI);
-            Serial.print("\t");
-            Serial.println(euler[2] * 180/M_PI);
+            swSerial.print("euler\t");
+            swSerial.print(euler[0] * 180/M_PI);
+            swSerial.print("\t");
+            swSerial.print(euler[1] * 180/M_PI);
+            swSerial.print("\t");
+            swSerial.println(euler[2] * 180/M_PI);
         #endif
 
         #ifdef OUTPUT_READABLE_YAWPITCHROLL
@@ -297,12 +294,12 @@ void loop() {
             mpu.dmpGetQuaternion(&q, fifoBuffer);
             mpu.dmpGetGravity(&gravity, &q);
             mpu.dmpGetYawPitchRoll(ypr, &q, &gravity);
-            Serial.print("ypr\t");
-            Serial.print(ypr[0] * 180/M_PI);
-            Serial.print("\t");
-            Serial.print(ypr[1] * 180/M_PI);
-            Serial.print("\t");
-            Serial.println(ypr[2] * 180/M_PI);
+            swSerial.print("ypr\t");
+            swSerial.print(ypr[0] * 180/M_PI);
+            swSerial.print("\t");
+            swSerial.print(ypr[1] * 180/M_PI);
+            swSerial.print("\t");
+            swSerial.println(ypr[2] * 180/M_PI);
         #endif
 
         #ifdef OUTPUT_READABLE_REALACCEL
@@ -311,12 +308,12 @@ void loop() {
             mpu.dmpGetAccel(&aa, fifoBuffer);
             mpu.dmpGetGravity(&gravity, &q);
             mpu.dmpGetLinearAccel(&aaReal, &aa, &gravity);
-            Serial.print("areal\t");
-            Serial.print(aaReal.x);
-            Serial.print("\t");
-            Serial.print(aaReal.y);
-            Serial.print("\t");
-            Serial.println(aaReal.z);
+            swSerial.print("areal\t");
+            swSerial.print(aaReal.x);
+            swSerial.print("\t");
+            swSerial.print(aaReal.y);
+            swSerial.print("\t");
+            swSerial.println(aaReal.z);
         #endif
 
         #ifdef OUTPUT_READABLE_WORLDACCEL
@@ -327,12 +324,12 @@ void loop() {
             mpu.dmpGetGravity(&gravity, &q);
             mpu.dmpGetLinearAccel(&aaReal, &aa, &gravity);
             mpu.dmpGetLinearAccelInWorld(&aaWorld, &aaReal, &q);
-            Serial.print("aworld\t");
-            Serial.print(aaWorld.x);
-            Serial.print("\t");
-            Serial.print(aaWorld.y);
-            Serial.print("\t");
-            Serial.println(aaWorld.z);
+            swSerial.print("aworld\t");
+            swSerial.print(aaWorld.x);
+            swSerial.print("\t");
+            swSerial.print(aaWorld.y);
+            swSerial.print("\t");
+            swSerial.println(aaWorld.z);
         #endif
     
         #ifdef OUTPUT_TEAPOT
@@ -345,7 +342,7 @@ void loop() {
             teapotPacket[7] = fifoBuffer[9];
             teapotPacket[8] = fifoBuffer[12];
             teapotPacket[9] = fifoBuffer[13];
-            Serial.write(teapotPacket, 14);
+            swSerial.write(teapotPacket, 14);
             teapotPacket[11]++; // packetCount, loops at 0xFF on purpose
         #endif
 
