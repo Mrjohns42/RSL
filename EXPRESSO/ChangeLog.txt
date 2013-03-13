@@ -1,0 +1,206 @@
+v0.8.0 - Ongoing
+================
+
+- Added I2C support for the SSD1306 Driver
+- Updated Crossworks project to LPC1000 lib v1.19
+  (Uses CMSIS 3)
+- Small improvement to gpioSetValue (thanks Tom)
+
+v0.75 - 24 March 2012
+=====================
+
+- *** Renamed 'drivers/lcd' to 'drivers/displays' ***
+- *** Moved Chibi to 'drivers/rf/chibi' ***
+- Added PN532 drivers to /drivers/rf/pn532
+- Added LPCXpresso project files to root folder
+- Added average sampling option to projectconfig.h.
+  This allows you to take several readings from the
+  ADC and return the average.  Helps reduces one-off
+  peaks and valleys in the ADC at the expense of
+  slower reads.
+- Fixed I2C clock duty cycle registers
+- Fixed a bug in pmu.c when waking up from deep sleep with
+  a timed delay ... wouldn't wakeup due to reconfiguring
+  32-bit timer 0.
+- Fixed bug in LPC11xx_handlers.c with CodeSourcery (thanks
+  David).
+
+v0.70 - 8 August 2011
+=====================
+
+- Updated 'pmuInit' and 'projectconfig.h' to enable
+  power profiles in the LPC1100L series of chips.
+- Updated 'pmuDeepSleep' in core/pmu/pmu.c to remove
+  the individual peripherals registers during deep-
+  sleep.  The latest version of the UM removed these.
+  The deep sleep command now has the following signature:
+  void pmuDeepSleep(uint32_t wakeupSeconds)
+- Updated clock values in cpu.c for PLL to match FCCO 
+  range of 156-320MHz
+- Changed SCB_PLLCTRL_MULT_* to SCB_PLLCTRL_MSEL_* in
+  lpc111x.h to match usermanual
+- Changed SCB_PLLCTRL_DIV_* SCB_PLLCTRL_PSEL_* in
+  lpc111x.h to match usermanual
+- Fixed IOCON_SWDIO_PIO1_3_FUNC_CT32B1_MAT2 in lpc134x.h
+- Fixed a nasty bug with 'gpioInterruptEvent' in the 
+  gpioSetInterrupt function (core/gpio/gpio.c)
+- Added cmd_reset to the CLI
+- Added __reset() macro to lpc111x.h (see note below)
+- Added AIRCR register to lpc111x.h (Application Interrupt
+  and Reset Control Register) to allow easy system resets.
+- Added '-lm' to linker in Makefile for math.c support
+- Increased MAX_STRING_SIZE from 100 to 255 in stdio.c
+- Added driver for the TSL2561 digital light sensor
+- Added an example of reading the LP75B temperature sensor
+  once every 5 seconds, transmitting the temperature 
+  wirelessly, and then going into deep sleep mode until the
+  next reading.  See "tools/examples/chibi/transmit_temp".
+
+v0.65 - 7 March 2011
+====================
+
+- Interrupts are now disabled while feeding the watchdog as per
+  a warning in the usermanual.
+- Modified projectconfig.h to select the target board and configure
+  the project accordingly.  This isn't ideal, but it's a lot more
+  maintainable than have a seperate code base for every board since
+  they share 95% of the same code.
+- Fixed a bug in adcInit().  AD6 and AD7 were not being initialised
+  for the LPC1114 Reference Design Base Board.  Depending on what
+  board you are using, you will need to comment or uncomment the
+  appropriate pins in 'core/adc/adc.c'.
+- Made a number of changes to reduce power consumption in deep sleep
+  (adjusting internal pullups, making sure peripherals are in sleep
+  mode or properly configured for lower power consumption, etc.).
+  The LPC1114 802.15.4 wireless Boards went from ~250uA to 79uA in
+  deep sleep.
+- Modified WDT code to use the WDT oscillator (rather than the
+  external crystal)
+- Fixed a bug when waking up from sleep in Chibi.  Removed systick
+  delay when toggling reset and slptr pins since this was causing
+  a blocking condition with the wakeup ISR.
+- Added a CFG_VREG section to projectconfig.h to make it easier to
+  work with dual output voltage regulators like the TPS780
+- Fixed a bug calculating the battery voltage in cmd_sysinfo.h
+- Updated SCB_DEVICEID list in lpc111x.h to include new parts from UM10398
+  Rev. 3 (14 January 2011).
+- Added wsbridge example to 'tools/examples/chibi/sniffer-wsbridge'
+- Modified chb_libpcap.c to always create a new file when logging 802.15.4
+  frames to the SD card.  If a file of the same name exists, it will now be
+  overwritten.
+- Updated pmu to switch to 2.2V in sleep mode if a TPS780 is used for the
+  voltage regulator, and swtich to 3.3V on startup (only relevant for
+  wireless boards).
+
+v0.60 - 31 Jan 2011
+===================
+
+- Added a number of examples to the 'tools/examples' folder.
+- Modified Crossworks project to build with stdio/printf in 'core/lib' (saves
+  about 1.5-2K in release mode)
+- Added rollover counter to the systick timer
+- Updated schematic for wireless board in tools/schematics (v1.6 which is the
+  final production version).  This schematic shows the expected layout for
+  peripherals like the SD card and battery voltage divider.
+- Reduced command names in cmd_tbl.h to save some flash space, and reduced
+  text in various commands (saves ~0.3kb)
+- Added the battery/supply voltage to the 'sysinfo' command (only applies to
+  LPC1114 wireless board)
+- Made a number of changes for deep-sleep mode to reduce power consumption 
+  (pmu.c updated, including a bug fix that prevented the code from exiting
+  deep sleep twice from SW).
+- Added basic driver for SSD1306-based 128x64 OLED displays (courtesy Adafruit
+  Industries who have a convenient breakout board for these displays).
+- Added 'chb_libpcap' to log raw 802.15.4 frames to libpcap binary files.
+  This allows wireless traffic to be stored for debugging and analysis in
+  Wireshark or other libpcap compatible protocol analysers.  Based on wsbridge
+  by Freaklabs.
+- Added a 'tools' folder with schematics and common open-source tools that can
+  be used with the code base
+- Modified 'core/gpio/gpio.c' to reduce the compiled code size. Repetitive
+  switches where only the registers change were modified to use temporary
+  registers and execute the code only once.
+- Updated Chibi to v0.91 (adds sleep method and promiscuous mode to allow
+  Chibi to act as an 802.15.4 packet sniffer, etc.).  To enable promiscuous
+  mode, set CFG_CHIBI_PROMISCUOUS to 1 and change the buffer size to 1024 to
+  handle a larger amount of incoming traffic.  The following code will send
+  all incoming bytes to UART for processing on the PC using WSBridge 
+  (available in the '/tools' folder or from www.freaklabs.org):
+
+    #include "drivers/chibi/chb.h"
+    #include "drivers/chibi/chb_drvr.h"
+    static chb_rx_data_t rx_data;
+
+    ...
+
+    chb_pcb_t *pcb = chb_get_pcb();
+    while(1)
+    {
+      // Check for incoming messages 
+      while (pcb->data_rcv) 
+      { 
+        // get the length of the data
+        rx_data.len = chb_read(&rx_data);
+        // make sure the length is nonzero
+        if (rx_data.len)
+        {
+          // Enable LED to indicate message reception 
+          gpioSetValue (CFG_LED_PORT, CFG_LED_PIN, CFG_LED_ON); 
+
+          // Send raw data to UART for processing on
+          // the PC (requires WSBridge - www.freaklabs.org)
+          uint8_t i;
+          for (i=0; i<rx_data.len; i++)
+          {
+            // Send output to UART
+            uartSendByte(rx_data.data[i]);
+          }
+
+          // Disable LED
+          gpioSetValue (CFG_LED_PORT, CFG_LED_PIN, CFG_LED_OFF); 
+        }
+      }
+    }
+
+v0.50 - 8 December 2010
+=======================
+
+- Modified Chibi to use 16-bit timer 0 for us delays (more accurate)
+- Added a flag to projectconfig.h to make FATFS read-only (to
+  save a couple KB when space is tight).
+- Moved 'project/eeprom.*' to 'drivers/eeprom' to add a level
+  of abstraction to eeprom access throughout the code
+- Added a table to projectconfig.h to try to keep track of pin and peripheral usage by drivers
+  and the included SW examples.
+- Added a simple pwm driver using 16-bit timer 1 and p1.9 (MAT0).  The code can be found
+  in "/core/pwm".
+- Added a bi-polar stepper motor driver based on the Arduino library.  Basic position data was added
+  to detect deviation from the 'Home' position and to retrieve the spindle's current rotation.  See
+  "drivers/motor/stepper" for more information.
+- Added simple RSA encryption/decryption driver.  Currently limited to
+  using 64-bit and 32-bit numbers in key pairs, which isn't terribly secure,
+  but allows much smaller code size than if huge number support was included.
+- Added a driver for the MCP4725 I2C DAC (see "drivers/dac/mcp4725").
+- Updated Chibi to v0.90
+- Modified FCLK_FAST() in 'drivers/fatfs/mmc.c' to set fast SPI speed
+  to 9MHz instead of the previous 2MHz.
+
+v0.30 - 7 October 2010
+======================
+
+- Moved command.c and cmd_tbl.h to /project to try to keep all project-specific files in one location
+- Created seperate .c files for every command for the command-line interface to make it easier
+  to maintain and share code between projects.  All commands listed in cmd_tbl.h are now stored
+  in their own files in /project/commands (ex.: "/project/commands/cmd_hello.c", etc.)
+- Add a CLI command to show the contents of any directory from the SD card 
+  (/project/commmands/cmd_sd_dir.c)
+- Added a CLI command showing how to enter deep-sleep and exit with a SW wakeup
+  (/project/commands/cmd_deepsleep.c)
+- Fixed pmu.c to set the core clock back to an appropriate state after wakeup
+
+v0.21 - 21 September 2010
+=========================
+
+- Added ChaN's FATFS and a basic MMC/SDHC driver
+- Added "drivers/lcd" and a prelimenary (experimental) driver for 128x64
+  pixel ST7565-based bitmap LCDs (ex: http://www.adafruit.com/index.php?main_page=product_info&cPath=37&products_id=250)

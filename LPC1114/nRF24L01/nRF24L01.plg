@@ -4,64 +4,18 @@
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
 C:\395\LPC1114\nRF24L01\nRF24L01.uvproj
-Project File Date:  03/11/2013
+Project File Date:  03/13/2013
 
 <h2>Output:</h2>
-Build target 'nRF24L01'
-compiling main.c...
-compiling Serial.c...
-linking...
-nRF24L01.axf: Error: L6218E: Undefined symbol configureGPIO (referred from main.o).
-Target not created
-Build target 'nRF24L01'
-linking...
-nRF24L01.axf: Error: L6218E: Undefined symbol configureGPIO (referred from main.o).
-Target not created
-Build target 'nRF24L01'
-linking...
-nRF24L01.axf: Error: L6218E: Undefined symbol configureGPIO (referred from main.o).
-Target not created
-Build target 'nRF24L01'
-compiling main.c...
-compiling Serial.c...
-linking...
-Program Size: Code=3648 RO-data=224 RW-data=32 ZI-data=608  
-"nRF24L01.axf" - 0 Error(s), 0 Warning(s).
 Load "C:\\395\\LPC1114\\nRF24L01\\nRF24L01.AXF" 
 Erase Done.
 Programming Done.
 Verify OK.
 Build target 'nRF24L01'
 compiling main.c...
-compiling Serial.c...
-..\..\serial\Serial.c(79): warning:  #1-D: last line of file ends without a newline
+compiling nrf24l01.c...
 linking...
-Program Size: Code=3748 RO-data=224 RW-data=32 ZI-data=608  
-"nRF24L01.axf" - 0 Error(s), 1 Warning(s).
-Build target 'nRF24L01'
-compiling Serial.c...
-linking...
-Program Size: Code=3748 RO-data=224 RW-data=32 ZI-data=608  
-"nRF24L01.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\395\\LPC1114\\nRF24L01\\nRF24L01.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'nRF24L01'
-compiling ssp.c...
-compiling Serial.c...
-linking...
-Program Size: Code=3680 RO-data=224 RW-data=32 ZI-data=608  
-"nRF24L01.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\395\\LPC1114\\nRF24L01\\nRF24L01.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'nRF24L01'
-compiling main.c...
-compiling Serial.c...
-linking...
-Program Size: Code=3680 RO-data=224 RW-data=32 ZI-data=608  
+Program Size: Code=3992 RO-data=240 RW-data=40 ZI-data=608  
 "nRF24L01.axf" - 0 Error(s), 0 Warning(s).
 Load "C:\\395\\LPC1114\\nRF24L01\\nRF24L01.AXF" 
 Erase Done.
@@ -70,123 +24,7 @@ Verify OK.
 Build target 'nRF24L01'
 compiling main.c...
 linking...
-Program Size: Code=3680 RO-data=224 RW-data=32 ZI-data=608  
-"nRF24L01.axf" - 0 Error(s), 0 Warning(s).
-Build target 'nRF24L01'
-linking...
-Program Size: Code=3680 RO-data=224 RW-data=32 ZI-data=608  
-"nRF24L01.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\395\\LPC1114\\nRF24L01\\nRF24L01.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'nRF24L01'
-compiling main.c...
-main.c(94): error:  #268: declaration may not appear after executable statement in block
-Target not created
-Build target 'nRF24L01'
-compiling main.c...
-linking...
-Program Size: Code=3656 RO-data=224 RW-data=40 ZI-data=624  
-"nRF24L01.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\395\\LPC1114\\nRF24L01\\nRF24L01.AXF" 
-Load "C:\\395\\LPC1114\\nRF24L01\\nRF24L01.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'nRF24L01'
-linking...
-Program Size: Code=3656 RO-data=224 RW-data=40 ZI-data=624  
-"nRF24L01.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\395\\LPC1114\\nRF24L01\\nRF24L01.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'nRF24L01'
-compiling main.c...
-linking...
-Program Size: Code=3656 RO-data=224 RW-data=40 ZI-data=624  
-"nRF24L01.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\395\\LPC1114\\nRF24L01\\nRF24L01.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'nRF24L01'
-compiling main.c...
-linking...
-Program Size: Code=3680 RO-data=224 RW-data=32 ZI-data=608  
-"nRF24L01.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\395\\LPC1114\\nRF24L01\\nRF24L01.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'nRF24L01'
-compiling main.c...
-linking...
-Program Size: Code=3656 RO-data=224 RW-data=32 ZI-data=608  
-"nRF24L01.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\395\\LPC1114\\nRF24L01\\nRF24L01.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'nRF24L01'
-compiling main.c...
-linking...
-Program Size: Code=3680 RO-data=224 RW-data=32 ZI-data=608  
-"nRF24L01.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\395\\LPC1114\\nRF24L01\\nRF24L01.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'nRF24L01'
-compiling main.c...
-linking...
-Program Size: Code=3800 RO-data=240 RW-data=32 ZI-data=608  
-"nRF24L01.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\395\\LPC1114\\nRF24L01\\nRF24L01.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'nRF24L01'
-compiling main.c...
-linking...
-Program Size: Code=3796 RO-data=240 RW-data=32 ZI-data=608  
-"nRF24L01.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\395\\LPC1114\\nRF24L01\\nRF24L01.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'nRF24L01'
-compiling cpu_lpc1000.c...
-linking...
-Program Size: Code=3796 RO-data=240 RW-data=32 ZI-data=608  
-"nRF24L01.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\395\\LPC1114\\nRF24L01\\nRF24L01.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'nRF24L01'
-compiling main.c...
-linking...
-Program Size: Code=3796 RO-data=240 RW-data=32 ZI-data=608  
-"nRF24L01.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\395\\LPC1114\\nRF24L01\\nRF24L01.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'nRF24L01'
-compiling main.c...
-linking...
-Program Size: Code=3780 RO-data=240 RW-data=32 ZI-data=608  
-"nRF24L01.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\395\\LPC1114\\nRF24L01\\nRF24L01.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'nRF24L01'
-compiling main.c...
-linking...
-Program Size: Code=3680 RO-data=224 RW-data=32 ZI-data=608  
+Program Size: Code=3992 RO-data=240 RW-data=40 ZI-data=608  
 "nRF24L01.axf" - 0 Error(s), 0 Warning(s).
 Load "C:\\395\\LPC1114\\nRF24L01\\nRF24L01.AXF" 
 Erase Done.

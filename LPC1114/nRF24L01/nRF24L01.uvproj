@@ -421,6 +421,11 @@
               <FileType>1</FileType>
               <FilePath>.\nrf24l01.c</FilePath>
             </File>
+            <File>
+              <FileName>Retarget.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Retarget.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -510,6 +515,11 @@
               <FileName>Serial.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\serial\Serial.c</FilePath>
+            </File>
+            <File>
+              <FileName>i2c.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\i2c.h</FilePath>
             </File>
           </Files>
         </Group>

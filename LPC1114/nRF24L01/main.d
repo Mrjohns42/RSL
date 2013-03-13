@@ -10,4 +10,6 @@ main.o: ssp.h
 main.o: cpu_lpc1000.h
 main.o: nrf24l01.h
 main.o: serial.h
+main.o: C:\Keil\ARM\RV31\Inc\stdio.h
+main.o: C:\Keil\ARM\RV31\Inc\rt_misc.h
 main.o: C:\Keil\ARM\RV31\Inc\string.h

@@ -387,14 +387,14 @@
           <GroupName>Startup</GroupName>
           <Files>
             <File>
-              <FileName>startup_LPC11xx.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\startup_LPC11xx.s</FilePath>
-            </File>
-            <File>
               <FileName>system_LPC11xx.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\blinky\system_LPC11xx.c</FilePath>
+            </File>
+            <File>
+              <FileName>startup_LPC11xx.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\startup_LPC11xx.s</FilePath>
             </File>
           </Files>
         </Group>
@@ -420,6 +420,11 @@
               <FileName>nrf24l01.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\nrf24l01.c</FilePath>
+            </File>
+            <File>
+              <FileName>Retarget.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Retarget.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -505,6 +510,11 @@
               <FileName>wdt.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\wdt.c</FilePath>
+            </File>
+            <File>
+              <FileName>Serial.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\serial\Serial.c</FilePath>
             </File>
           </Files>
         </Group>

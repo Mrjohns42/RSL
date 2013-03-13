@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeLite_Project Name="LPC1114_CodeBase" InternalType="">
+  <Plugins>
+    <Plugin Name="qmake">
+      <![CDATA[00020001N0005Debug0000000000000001N0007Release000000000000]]>
+    </Plugin>
+  </Plugins>
+  <Description/>
+  <Dependencies/>
+  <VirtualDirectory Name="core">
+    <VirtualDirectory Name="adc">
+      <File Name="../../core/adc/adc.c"/>
+      <File Name="../../core/adc/adc.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="cpu">
+      <File Name="../../core/cpu/cpu.c"/>
+      <File Name="../../core/cpu/cpu.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="gpio">
+      <File Name="../../core/gpio/gpio.c"/>
+      <File Name="../../core/gpio/gpio.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="i2c">
+      <File Name="../../core/i2c/i2c.c"/>
+      <File Name="../../core/i2c/i2c.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="libc">
+      <File Name="../../core/libc/stdio.c"/>
+      <File Name="../../core/libc/string.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="pmu">
+      <File Name="../../core/pmu/pmu.c"/>
+      <File Name="../../core/pmu/pmu.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="ssp">
+      <File Name="../../core/ssp/ssp.c"/>
+      <File Name="../../core/ssp/ssp.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="systick">
+      <File Name="../../core/systick/systick.c"/>
+      <File Name="../../core/systick/systick.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="timer16">
+      <File Name="../../core/timer16/timer16.c"/>
+      <File Name="../../core/timer16/timer16.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="timer32">
+      <File Name="../../core/timer32/timer32.c"/>
+      <File Name="../../core/timer32/timer32.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="uart">
+      <File Name="../../core/uart/uart.c"/>
+      <File Name="../../core/uart/uart.h"/>
+      <File Name="../../core/uart/uart_buf.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="wdt">
+      <File Name="../../core/wdt/wdt.c"/>
+      <File Name="../../core/wdt/wdt.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="cmd">
+      <File Name="../../core/cmd/cmd.c"/>
+      <File Name="../../core/cmd/cmd.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="pwm">
+      <File Name="../../core/pwm/pwm.c"/>
+      <File Name="../../core/pwm/pwm.h"/>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <VirtualDirectory Name="drivers">
+    <VirtualDirectory Name="eeprom">
+      <VirtualDirectory Name="mcp24aa">
+        <File Name="../../drivers/eeprom/mcp24aa/mcp24aa.c"/>
+        <File Name="../../drivers/eeprom/mcp24aa/mcp24aa.h"/>
+      </VirtualDirectory>
+      <File Name="../../drivers/eeprom/eeprom.c"/>
+      <File Name="../../drivers/eeprom/eeprom.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="chibi">
+      <File Name="../../drivers/chibi/chb.c"/>
+      <File Name="../../drivers/chibi/chb.h"/>
+      <File Name="../../drivers/chibi/chb_buf.c"/>
+      <File Name="../../drivers/chibi/chb_buf.h"/>
+      <File Name="../../drivers/chibi/chb_eeprom.c"/>
+      <File Name="../../drivers/chibi/chb_eeprom.h"/>
+      <File Name="../../drivers/chibi/chb_spi.c"/>
+      <File Name="../../drivers/chibi/chb_spi.h"/>
+      <File Name="../../drivers/chibi/chb_drvr.c"/>
+      <File Name="../../drivers/chibi/chb_drvr.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="sensors">
+      <VirtualDirectory Name="lm75b">
+        <File Name="../../drivers/sensors/lm75b/lm75b.c"/>
+        <File Name="../../drivers/sensors/lm75b/lm75b.h"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="fatfs">
+      <File Name="../../drivers/fatfs/ccsbcs.c"/>
+      <File Name="../../drivers/fatfs/diskio.h"/>
+      <File Name="../../drivers/fatfs/ff.c"/>
+      <File Name="../../drivers/fatfs/ff.h"/>
+      <File Name="../../drivers/fatfs/ffconf.h"/>
+      <File Name="../../drivers/fatfs/integer.h"/>
+      <File Name="../../drivers/fatfs/mmc.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="motor">
+      <VirtualDirectory Name="stepper">
+        <File Name="../../drivers/motor/stepper/stepper.c"/>
+        <File Name="../../drivers/motor/stepper/stepper.h"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="rsa">
+      <File Name="../../drivers/rsa/rsa.c"/>
+      <File Name="../../drivers/rsa/rsa.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="dac">
+      <VirtualDirectory Name="mcp4725">
+        <File Name="../../drivers/dac/mcp4725/mcp4725.c"/>
+        <File Name="../../drivers/dac/mcp4725/mcp4725.h"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="displays">
+      <VirtualDirectory Name="bitmap">
+        <VirtualDirectory Name="ST7565">
+          <File Name="../../drivers/displays/bitmap/ST7565/ST7565.c"/>
+          <File Name="../../drivers/displays/bitmap/ST7565/ST7565.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ssd1306">
+          <File Name="../../drivers/displays/bitmap/ssd1306/ssd1306.c"/>
+          <File Name="../../drivers/displays/bitmap/ssd1306/ssd1306.h"/>
+        </VirtualDirectory>
+        <File Name="../../drivers/displays/bitmap/readme.txt"/>
+      </VirtualDirectory>
+      <File Name="../../drivers/displays/smallfonts.c"/>
+      <File Name="../../drivers/displays/smallfonts.h"/>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <VirtualDirectory Name="lpc1xxx">
+    <File Name="../../lpc1xxx/linkscript.ld"/>
+    <File Name="../../lpc1xxx/LPC1xxx_startup.c"/>
+    <File Name="../../lpc1xxx/LPC11xx_handlers.c"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="root">
+    <File Name="../../lpc111x.h"/>
+    <File Name="../../main.c"/>
+    <File Name="../../Makefile"/>
+    <File Name="../../projectconfig.h"/>
+    <File Name="../../sysdefs.h"/>
+    <File Name="../../sysinit.c"/>
+    <File Name="../../sysinit.h"/>
+    <File Name="../../ChangeLog.txt"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="project">
+    <File Name="../../project/cmd_tbl.h"/>
+    <File Name="../../project/commands.c"/>
+    <File Name="../../project/commands.h"/>
+    <VirtualDirectory Name="commands">
+      <File Name="../../project/commands/cmd_chibi_addr.c"/>
+      <File Name="../../project/commands/cmd_chibi_tx.c"/>
+      <File Name="../../project/commands/cmd_deepsleep.c"/>
+      <File Name="../../project/commands/cmd_hello.c"/>
+      <File Name="../../project/commands/cmd_i2ceeprom_read.c"/>
+      <File Name="../../project/commands/cmd_i2ceeprom_write.c"/>
+      <File Name="../../project/commands/cmd_lm75b_gettemp.c"/>
+      <File Name="../../project/commands/cmd_sysinfo.c"/>
+      <File Name="../../project/commands/cmd_sd_dir.c"/>
+      <File Name="../../project/commands/cmd_reset.c"/>
+    </VirtualDirectory>
+    <File Name="../../project/readme.txt"/>
+  </VirtualDirectory>
+  <Settings Type="Dynamic Library">
+    <GlobalSettings>
+      <Compiler Options="" C_Options="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="gnu gcc" DebuggerType="GNU gdb debugger Cortex M3" Type="Dynamic Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g" C_Options="-g" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" UseDifferentPCHFlags="no" PCHFlags="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="" IntermediateDirectory="../../" Command="firmware.elf" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="yes" RemoteHostName="localhost" RemoteHostPort="2331" DebuggerPath="arm-none-eabi-gdb.exe">
+        <PostConnectCommands/>
+        <StartupCommands># Make sure that we are using SWD
+monitor interface SWD
+
+# Set monitor to little endian
+monitor endian little
+
+# Set monitor speed
+monitor speed 1000
+
+# Reset device
+monitor reset
+
+# Set device ID to LPC1114
+monitor flash device = LPC1114
+
+# Enable flash download
+monitor flash download = 1
+
+# Transfer the firmware to the device
+load "../../firmware.elf"
+
+# Initializing PC and stack pointer
+monitor reg r13 = (0x00000000)
+monitor reg pc = (0x00000004)
+
+monitor reset</StartupCommands>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="yes">
+        <RebuildCommand/>
+        <CleanCommand>make clean</CleanCommand>
+        <BuildCommand>make</BuildCommand>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory>$(WorkspacePath)\..\..\</WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+    <Configuration Name="Release" CompilerType="gnu gcc" DebuggerType="GNU gdb debugger" Type="Dynamic Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="" C_Options="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" UseDifferentPCHFlags="no" PCHFlags="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="-O2" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="" IntermediateDirectory="./Release" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="">
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="yes">
+        <RebuildCommand/>
+        <CleanCommand>make clean</CleanCommand>
+        <BuildCommand>make</BuildCommand>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory>$(WorkspacePath)</WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+</CodeLite_Project>

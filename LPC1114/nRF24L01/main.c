@@ -17,6 +17,8 @@
 #include "nrf24l01.h"
 #include "serial.h"
 
+#include <stdio.h>
+#include <rt_misc.h>
 #include <string.h>
 
 #define	_CH 1			// Channel 0..125
@@ -58,59 +60,72 @@ void Led_Blink(void) {
 }
 
 int main(void) {
-	//RECEIVE		   
-	int i;
-	char Buf[_Buffer_Size];
-	char Address[_Address_Width] = { 0x11, 0x22, 0x33, 0x44, 0x55 };
-
-    SSP_IOConfig(0);
-	SSP_Init(0);
-
-	configureGPIO();
-	SER_init();
-
-	Delay_Init();
-
-	LED_DIR_OUT;
-	Led_Blink();
-	
-
-	NRF24L01_Init(_RX_MODE, _CH, _1Mbps, Address, _Address_Width, _Buffer_Size);
-
-	while (1) {
-		Buf[0] = 0x0;
-		NRF24L01_Receive(Buf);
-
-		
-		if (strncmp(Buf,"HOLA\0",_Buffer_Size) == 0) {
-			LED_ON;
-			Delay_us(100000);
-			LED_OFF;
-		}
-	
-		for(i = 0; i < _Buffer_Size; i++)
-		{
-			sendchar(Buf[i]);
-		}
-		
-
-	}
-//	//SEND
-//	char Buf[_Buffer_Size] = "HOLA\0"; //Hello :)
+//	//SLAVE		   
+//	char Buf[_Buffer_Size];
 //	char Address[_Address_Width] = { 0x11, 0x22, 0x33, 0x44, 0x55 };
 //
-//	SSP_IOConfig(0);
+//  SSP_IOConfig(0);
 //	SSP_Init(0);
+//
+//	SER_init();
 //
 //	Delay_Init();
 //
 //	LED_DIR_OUT;
 //	Led_Blink();
+//	
 //
-//	NRF24L01_Init(_TX_MODE, _CH, _1Mbps, Address, _Address_Width, _Buffer_Size);
+//	NRF24L01_Init(_RX_MODE, _CH, _1Mbps, Address, _Address_Width, _Buffer_Size);
 //
 //	while (1) {
-//		NRF24L01_Send(Buf);
-//		Led_Blink();
+//		Buf[0] = 0x0;
+//		NRF24L01_Receive(Buf);
+//
+//		
+//		if (strncmp(Buf,"HOLA\0",_Buffer_Size) == 0)
+//		{
+//			LED_ON;
+//			Delay_us(100000);
+//			LED_OFF;		
+//	
+//			printf("%s ",Buf);
+//		}
+//
+//		if(strncmp(Buf,"XYZ\0",_Buffer_Size) == 0)
+//		{
+//		 	NRF24L01_Set_Device_Mode(_TX_MODE);
+//			strcpy(Buf,"345\0");
+//			NRF24L01_Send(Buf);
+//			NRF24L01_Set_Device_Mode(_RX_MODE);
+//		}
+//		
+//
 //	}
+
+	//MASTER
+	char Buf[_Buffer_Size] = "HOLA\0"; //Hello :)
+	char Address[_Address_Width] = { 0x11, 0x22, 0x33, 0x44, 0x55 };
+	
+	SER_init();
+
+	SSP_IOConfig(0);
+	SSP_Init(0);
+
+	Delay_Init();
+
+	LED_DIR_OUT;
+	Led_Blink();
+
+	NRF24L01_Init(_TX_MODE, _CH, _1Mbps, Address, _Address_Width, _Buffer_Size);
+
+	NRF24L01_Send(Buf);
+	Led_Blink();
+
+	strcpy(Buf,"XYZ\0");
+	NRF24L01_Send(Buf);
+	NRF24L01_Set_Device_Mode(_RX_MODE);
+	NRF24L01_Receive(Buf);
+	NRF24L01_Set_Device_Mode(_TX_MODE);
+    printf("%s\r\n", Buf);	
+
 }
