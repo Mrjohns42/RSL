@@ -1,0 +1,9 @@
+wdt.o: wdt.c
+wdt.o: driver_config.h
+wdt.o: C:\Keil\ARM\Inc\NXP\LPC11xx\LPC11xx.h
+wdt.o: C:\Keil\ARM\CMSIS\Include\core_cm0.h
+wdt.o: C:\Keil\ARM\RV31\Inc\stdint.h
+wdt.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
+wdt.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
+wdt.o: C:\Keil\ARM\Inc\NXP\LPC11xx\system_LPC11xx.h
+wdt.o: wdt.h

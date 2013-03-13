@@ -1,0 +1,17 @@
+The Audio project is a demo program for the Keil MCB1700
+Board using the NXP LPC17xx Microcontroller.
+
+It demonstrates an USB Audio Device - Speaker.
+
+The USB Audio Device is recognized by the host PC running
+Windows which will load a generic Audio driver and add a
+speaker which can be used for sound playback on the PC.
+Potenciometer on the board is used for setting the Volume.
+
+The Audio program is available for the following targets:
+  MCB1700 Board: configured for on-chip Flash ROM
+                 (used for production or target debugging)
+
+Since DMA is used for ISO communication, the USB RAM
+is allocated for DMA purposes. A scatter file, dma.sct, is 
+used in the Keil project file.

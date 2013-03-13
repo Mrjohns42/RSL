@@ -402,11 +402,6 @@
           <GroupName>Serial</GroupName>
           <Files>
             <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\main.c</FilePath>
-            </File>
-            <File>
               <FileName>Serial.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Serial.c</FilePath>
@@ -415,6 +410,41 @@
               <FileName>Retarget.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Retarget.c</FilePath>
+            </File>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>cpu_lpc1000.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\nrf24l01\nrf24l01_tx_lpc11xx\nrf24l01_send_lpc11xx\src\cpu_lpc1000.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf24l01.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\nrf24l01\nrf24l01_tx_lpc11xx\nrf24l01_send_lpc11xx\src\nrf24l01.c</FilePath>
+            </File>
+            <File>
+              <FileName>ssp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\nrf24l01\nrf24l01_tx_lpc11xx\nrf24l01_send_lpc11xx\driver\ssp.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Headers</GroupName>
+          <Files>
+            <File>
+              <FileName>ssp.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\nrf24l01\nrf24l01_tx_lpc11xx\nrf24l01_send_lpc11xx\driver\ssp.h</FilePath>
+            </File>
+            <File>
+              <FileName>driver_config.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\nrf24l01\nrf24l01_tx_lpc11xx\nrf24l01_send_lpc11xx\config\driver_config.h</FilePath>
             </File>
           </Files>
         </Group>

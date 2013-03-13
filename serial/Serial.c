@@ -29,13 +29,12 @@ void SER_init (void) {
   LPC_IOCON->PIO1_7  =  (1UL <<  0);            /* P1.7 is TxD                */
 
   /* configure UART0 */
-  //Baud = PCLK/(16*(DLL+DLM<<8)*(1+DIV/MUL))
   LPC_SYSCON->SYSAHBCLKCTRL |=  (1UL << 12);    /* Enable clock to UART       */
-  LPC_SYSCON->UARTCLKDIV     =  (2UL <<  0);    /* UART clock =  CCLK / 2  = 24MHz   */
+  LPC_SYSCON->UARTCLKDIV     =  (4UL <<  0);    /* UART clock =  CCLK / 4     */
 
   LPC_UART->LCR = 0x83;                   /* 8 bits, no Parity, 1 Stop bit    */
-  LPC_UART->DLL = 1;                      /* 1,000,000 Baud Rate @ 24.0 MHZ PCLK */
-  LPC_UART->FDR = 0x21;                   /* FR 1.5, DIVADDVAL 1, MULVAL 2  */
+  LPC_UART->DLL = 4;                      /* 115200 Baud Rate @ 12.0 MHZ PCLK */
+  LPC_UART->FDR = 0x85;                   /* FR 1.627, DIVADDVAL 5, MULVAL 8  */
   LPC_UART->DLM = 0;                      /* High divisor latch = 0           */
   LPC_UART->LCR = 0x03;                   /* DLAB = 0                         */
 }
@@ -60,4 +59,17 @@ int getkey (void) {
 
   while (!(LPC_UART->LSR & 0x01));
   return (LPC_UART->RBR);
+}			  
+
+
+void configureGPIO()
+{   //Enable CLKOUT
+	LPC_IOCON->PIO0_1 &= ~0x3F; // Select clkout function for P0.1
+	LPC_IOCON->PIO0_1 |= 0x01;
+	LPC_SYSCON->CLKOUTCLKSEL = 0x00; // IRC: 0x00 System osci: 0x01 WTD: 0x02 Main clk: 0x03
+	LPC_SYSCON->CLKOUTUEN = 0x01; // Update clock
+	LPC_SYSCON->CLKOUTUEN = 0x00; // Toggle update register once
+	LPC_SYSCON->CLKOUTUEN = 0x01;
+	while ( !(LPC_SYSCON->CLKOUTUEN & 0x01) ); // Wait until updated
+	LPC_SYSCON->CLKOUTDIV = 1; // Divided by 255
 }

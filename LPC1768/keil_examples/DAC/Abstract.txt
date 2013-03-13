@@ -1,0 +1,13 @@
+The DAC project is a simple program for the NXP 'LPC1768' 
+microcontroller. The result of conversion can be probed 
+at Pin AOUT. Or if a LED and a 1k ohm resistor connect
+in series between AOUT and GND, we can see the LED flashes quickly.
+
+To run the DAC project using the DMA: set "DAC_DMA_ENABLED" to 1
+
+Example functionality:                                                   
+ - Clock Settings:
+   - XTAL  =  12 MHz
+   - PLL0  = 288 MHz
+   - CCLK  =  72 MHz
+

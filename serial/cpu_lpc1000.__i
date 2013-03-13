@@ -1,0 +1,1 @@
+-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\Inc -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\NXP\LPC11xx -o "cpu_lpc1000.o" --omf_browse "cpu_lpc1000.crf" --depend "cpu_lpc1000.d" "..\nrf24l01\nrf24l01_tx_lpc11xx\nrf24l01_send_lpc11xx\src\cpu_lpc1000.c"

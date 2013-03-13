@@ -1,0 +1,32 @@
+The RTCmainclock project is a simple program for the NXP 'LPC1768' 
+microcontroller using Keil 'MCB1700' evaluation board, and 
+demonstrates how to configure the RTC as main clock source.
+
+!!********************************************************************************************************!!
+!! NOTE ! NOTE ! NOTE ! NOTE ! NOTE ! NOTE ! NOTE ! NOTE ! NOTE ! NOTE ! NOTE ! NOTE ! NOTE ! NOTE ! NOTE !! 
+!!
+!! This example demonstrates example 2 of chapter "Examples of PLL0 settings" 
+!! in the LPC17xx User manual.
+!! Please read this chapter and chapter "PLL0 setup sequence" carefully!
+!!
+!! Do not use the USB in this configuration!
+!!
+!! This example uses it own system_LPC17xx.c file: system_LPC17xx_RTCmain.c!
+!!
+!! NOTE ! NOTE ! NOTE ! NOTE ! NOTE ! NOTE ! NOTE ! NOTE ! NOTE ! NOTE ! NOTE ! NOTE ! NOTE ! NOTE ! NOTE !!
+!!********************************************************************************************************!!
+
+
+In the "Configuration wizard" in system_LPC17xx_RTCmain.c several clock settings can be done. The 
+PLL clock source is selected to be the RTC oscillator. PLL0 is configured to have a 288MHz output 
+creating a 288/4 = 72 MHz CClk.
+
+
+Example functionality:                                                   
+ - Clock Settings:
+   - RTC  =  32.768 kHz
+   - PLL0_MSEL = 8789
+   - PLL0_NSEL = 2
+   - PLL0  = 288 MHz
+   - CCLK  =  72 MHz
+

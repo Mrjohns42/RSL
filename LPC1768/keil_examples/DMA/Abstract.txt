@@ -1,0 +1,12 @@
+The DMA project is a simple program for the NXP 'LPC1768' 
+microcontroller. The DMA resultcan be verified  by setting
+two breakpoints at the two dead loops at the end of the main
+function.
+
+
+Example functionality:                                                   
+ - Clock Settings:
+   - XTAL  =  12 MHz
+   - PLL0  = 288 MHz
+   - CCLK  =  72 MHz
+

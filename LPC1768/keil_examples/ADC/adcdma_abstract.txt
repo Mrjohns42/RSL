@@ -1,0 +1,14 @@
+The ADC project is a simple program for the NXP 'LPC1768' 
+microcontroller using Keil 'MCB1700' evaluation board,
+demonstrating a ADC burst transfer using the DMA. 
+
+The result of conversion can be stored in variable of ADCValue[] 
+which can be displayed in Watch & Call Stack Window and is displayed
+onto the UART0 (9600)
+
+Example functionality:                                                   
+ - Clock Settings:
+   - XTAL  =  12 MHz
+   - PLL0  = 288 MHz
+   - CCLK  =  72 MHz
+

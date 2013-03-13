@@ -1,0 +1,12 @@
+The ADC project is a simple program for the NXP 'LPC1768' 
+microcontroller using Keil 'MCB1700' evaluation board, and 
+demonstrating interrupt mode and polling mode for ADC. The 
+result of conversion can be stored in variable of ADC0Value, 
+and can be displayed in Watch& Call Stack Window.
+
+Example functionality:                                                   
+ - Clock Settings:
+   - XTAL  =  12 MHz
+   - PLL0  = 288 MHz
+   - CCLK  =  72 MHz
+

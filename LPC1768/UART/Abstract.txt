@@ -1,0 +1,12 @@
+The UART project is a simple program for the NXP 'LPC1768' 
+microcontroller using Keil 'MCB1700' evaluation board.
+Send some characters from the Serial Terminal, LPC1768 will
+send back the same characters to Serial Terminal immediately.
+
+
+Example functionality:                                                   
+ - Clock Settings:
+   - XTAL  =  12 MHz
+   - PLL0  = 288 MHz
+   - CCLK  =  72 MHz
+

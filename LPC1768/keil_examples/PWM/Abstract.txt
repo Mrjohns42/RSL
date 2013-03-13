@@ -1,0 +1,12 @@
+The PWM project is a simple program for the NXP 'LPC1768' 
+microcontroller using Keil 'MCB1700' evaluation board, and 
+demonstrating PWM functionality.
+
+This project simply outputs 6 different PWMs on P2.0-5
+
+Example functionality:                                                   
+ - Clock Settings:
+   - XTAL  =  12 MHz
+   - PLL0  = 288 MHz
+   - CCLK  =  72 MHz
+

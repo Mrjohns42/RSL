@@ -1,0 +1,13 @@
+The test program is to connect CLK, WS, and SDA lines between the
+TX and RX. DAO is the master output, DAI is the slave input. This test
+is not a real-world application but test both TX and RX channel in
+a single program. 
+
+To use the I2S with the DMA: Set "I2S_DMA_ENABLED" to 1
+
+Example functionality:                                                   
+ - Clock Settings:
+   - XTAL  =  12 MHz
+   - PLL0  = 288 MHz
+   - CCLK  =  72 MHz
+

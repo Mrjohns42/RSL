@@ -1,0 +1,13 @@
+main.o: main.c
+main.o: driver_config.h
+main.o: C:\Keil\ARM\Inc\NXP\LPC11xx\LPC11xx.h
+main.o: C:\Keil\ARM\CMSIS\Include\core_cm0.h
+main.o: C:\Keil\ARM\RV31\Inc\stdint.h
+main.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
+main.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
+main.o: C:\Keil\ARM\Inc\NXP\LPC11xx\system_LPC11xx.h
+main.o: ssp.h
+main.o: cpu_lpc1000.h
+main.o: nrf24l01.h
+main.o: serial.h
+main.o: C:\Keil\ARM\RV31\Inc\string.h

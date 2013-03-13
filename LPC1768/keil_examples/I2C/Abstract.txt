@@ -1,0 +1,12 @@
+This example is used to test the LPC 1768 I2C interface,
+and the slave is I2C temp. sensor LM75A.
+
+The temp value will be stored in I2CMasterBuffer byte 3, 4. 
+
+
+Example functionality:                                                   
+ - Clock Settings:
+   - XTAL  =  12 MHz
+   - PLL0  = 288 MHz
+   - CCLK  =  72 MHz
+

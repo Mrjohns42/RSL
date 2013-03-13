@@ -1,0 +1,25 @@
+The GPIO project is a simple program for the NXP 'LPC1768' 
+microcontroller using Keil 'MCB1700' evaluation board, and 
+demonstrating the usage of the BOD.
+
+LEDs P2.2-2.6 will continously blink while in active mode.
+
+During stage-1 BOD (Vdd(reg)(3v3) typically <= 2.2V)
+LED connected to P1.31 will blink rapidly. This indicates
+that the BOD interrupt handler is being executed.
+
+During state-2 BOD (Vdd(reg)(3v3) typically <= 1.85V)
+The BODR bit in the RSID register is set. Once Vdd(reg)(3V3)
+has recovered from brownout, the LED connected to P1.29
+is set.
+
+To test this project, a variable external power supply
+is required. It is attached onto the MCB1700's VDDREG jumper.
+
+
+Example functionality:                                                   
+ - Clock Settings:
+   - XTAL  =  12 MHz
+   - PLL0  = 288 MHz
+   - CCLK  =  72 MHz
+

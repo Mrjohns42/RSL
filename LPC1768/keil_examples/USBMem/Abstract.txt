@@ -1,0 +1,29 @@
+The Memory project is a demo program for the LPC1768
+using Keil MCB1700 board.
+
+Example functionality:                                                   
+ - Clock Settings:
+   - XTAL                   =  12 MHz
+   - PLL                    = 288 MHz
+   - processor clock = CCLK =  72 MHz
+   - USB clock              =  48 MHz
+   - CCLK / 4 clock         =  18 MHz
+
+It demonstrates an USB Memory based on USB Mass Storage Class.
+
+The USB Memory is automatically recognized by the host PC
+running Windows which will load a generic Mass Storage driver.
+
+The Memory program is available for the following targets:
+  MCB1700: configured for on-chip Flash ROM
+           (used for production or target debugging)
+
+Note: set jumper D-, D+ to DEVICE
+
+By default, DMA is used. The attached dma.sct scatter file
+is needed under the Keil MDK. If DMA is NOT used, modify the
+project under Keil MDK, don't use the dma.sct but use defined 
+target memory layout.
+
+
+

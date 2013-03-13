@@ -1,0 +1,14 @@
+The RS485 project is a simple program for the NXP 'LPC1768' 
+microcontroller using Keil 'MCB1700' evaluation board.
+
+TO test RS485, program one board with RS485_RX to 1(RX), one
+board with RS485_RX to 0(TX). reset TX board to send out a string
+with a RS485 slave address first, and then check the content of 
+UARTBuffer in the RX board.
+ 
+Example functionality:                                                   
+ - Clock Settings:
+   - XTAL  =  12 MHz
+   - PLL0  = 288 MHz
+   - CCLK  =  72 MHz
+

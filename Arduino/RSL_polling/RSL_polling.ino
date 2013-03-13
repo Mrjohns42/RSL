@@ -1,3 +1,26 @@
+/**
+* PIN CONNECTIONS
+*
+*  Serial Debug Monitor:
+*  RX - 10
+*  TX - 11
+*
+*  Servo:
+*  RX - 0
+*  TX - 1
+*  DIR - 2
+*  
+*  MPU6050:
+*  SCLK - A5
+*  SDA  - A4
+*  VIO  - 3.3V
+*
+*  Breadboard:
+*  VDD - 5V
+*  GND - GND
+**/
+
+
 #include <SoftwareSerial.h>
 SoftwareSerial swSerial(10,11);
 

@@ -1,0 +1,14 @@
+The CAN project is a simple program for the NXP 'LPC1768' 
+microcontroller.
+Send one message from CAN1(TX) and verify received message 
+on CAN2(RX) if it's a match, both CAN TX and RX are working.
+
+This sample project requires an external RS-232 (F-F) cable
+to connect CAN1 with CAN2.
+
+Example functionality:                                                   
+ - Clock Settings:
+   - XTAL  =  12 MHz
+   - PLL0  = 288 MHz
+   - CCLK  =  72 MHz
+

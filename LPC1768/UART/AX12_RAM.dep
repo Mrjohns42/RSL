@@ -1,0 +1,6 @@
+Dependencies for Project 'AX12', Target 'RAM': (DO NOT MODIFY !)
+F (..\common\src\startup_LPC17xx.s)(0x00000000)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\Inc -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\NXP --pd "NO_CRP SETA 1" --list ".\RAM\startup_LPC17xx.lst" --xref -o ".\RAM\startup_LPC17xx.o" --depend ".\RAM\startup_LPC17xx.d")
+F (..\common\src\system_LPC17xx.c)(0x00000000)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I..\common\inc -I C:\Keil\ARM\RV31\Inc -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\NXP -o ".\RAM\system_lpc17xx.o" --omf_browse ".\RAM\system_lpc17xx.crf" --depend ".\RAM\system_lpc17xx.d")
+F (.\uart.c)(0x4CF591B8)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I..\common\inc -I C:\Keil\ARM\RV31\Inc -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\NXP -o ".\RAM\uart.o" --omf_browse ".\RAM\uart.crf" --depend ".\RAM\uart.d")
+F (.\uarttest.c)(0x4D27AF32)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I..\common\inc -I C:\Keil\ARM\RV31\Inc -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\NXP -o ".\RAM\uarttest.o" --omf_browse ".\RAM\uarttest.crf" --depend ".\RAM\uarttest.d")
+F (.\Abstract.txt)(0x4D277BC8)()

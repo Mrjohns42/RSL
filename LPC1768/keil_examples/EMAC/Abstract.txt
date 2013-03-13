@@ -1,0 +1,38 @@
+This project is migrated from Keil MCB1700 Demo code.
+It can run at Keil MCB1700 board with LPC17xx.
+
+Example functionality:                                                   
+ - Clock Settings:
+   - XTAL  =  12 MHz
+   - PLL0  = 288 MHz
+   - CCLK  =  72 MHz
+
+Due to a bug in the LPC175x family(80 pin package) that 
+MDIO and MDC are not functioning correctly. A bit-banging 
+on the MDIO and MDC are included in the driver. Setting 
+MDC_MDIO_WORKAROUND to 1 will enable the bit-banging in 
+both MDC and MDIO.
+
+For board euipped with 80-pin LPC175x, some jumper setting
+is necessary for EasyWEB demo. 
+    Close "E/U" jumper(near USB Device/Host) on 2 and 3.
+    Close "E/C" jumper(Near CAN connector) on 2 and 3.
+
+The web page shows the values of analog input(AN2).
+This tiny webserver needs very little resources and therefore has
+some restrictions:
+- only one active TCP session at any one time
+- no support for fragmented IP datagrams
+- no buffer for TCP datagrams received in wrong order
+- only one web page. No GIF/JPG graphics possible.
+
+The IP address can be modified in the module tcpip.h to
+fit into your existing LAN (see MYIP_x). 
+Please order the extra issue 'Embedded Internet' of the 
+'Design & Elektronik' magazine for a technical description.
+It is only available in German language. 
+
+The easyWEB project is set up for one target:
+  FLASH:  Settings for Keil MCB1700 Board. 
+            Program code is loaded into on-chip flash
+

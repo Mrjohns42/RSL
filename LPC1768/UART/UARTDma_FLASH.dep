@@ -1,0 +1,7 @@
+Dependencies for Project 'UARTDma', Target 'FLASH': (DO NOT MODIFY !)
+F (..\common\src\startup_LPC17xx.s)(0x4D25288C)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I..\common\inc -I C:\Keil\ARM\RV31\Inc -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\NXP --pd "NO_CRP SETA 1" --list ".\FLASH\startup_LPC17xx.lst" --xref -o ".\FLASH\startup_LPC17xx.o" --depend ".\FLASH\startup_LPC17xx.d")
+F (..\common\src\system_LPC17xx.c)(0x4D25288C)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I..\common\inc -I C:\Keil\ARM\RV31\Inc -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\NXP -o ".\FLASH\system_lpc17xx.o" --omf_browse ".\FLASH\system_lpc17xx.crf" --depend ".\FLASH\system_lpc17xx.d")
+F (.\uart_dma.c)(0x4D221314)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I..\common\inc -I C:\Keil\ARM\RV31\Inc -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\NXP -o ".\FLASH\uart_dma.o" --omf_browse ".\FLASH\uart_dma.crf" --depend ".\FLASH\uart_dma.d")
+F (.\udmatest.c)(0x4D27AF32)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I..\common\inc -I C:\Keil\ARM\RV31\Inc -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\NXP -o ".\FLASH\udmatest.o" --omf_browse ".\FLASH\udmatest.crf" --depend ".\FLASH\udmatest.d")
+F (.\dma.c)(0x4D221314)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I..\common\inc -I C:\Keil\ARM\RV31\Inc -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\NXP -o ".\FLASH\dma.o" --omf_browse ".\FLASH\dma.crf" --depend ".\FLASH\dma.d")
+F (.\Abstract.txt)(0x4D277BC8)()
