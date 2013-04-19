@@ -1,0 +1,7 @@
+Dependencies for Project 'UART', Target 'UART_Release': (DO NOT MODIFY !)
+F (..\Common\src\uart.c)(0x4F909819)(-c --cpu Cortex-M0 -D__MICROLIB -g -O0 --apcs=interwork -I. -I..\Common\inc -I "C:\Keil\ARM\CMSIS\Include" -I "C:\Keil\ARM\INC\NXP\LPC11xx" -D__DEBUG_FLASH -o ".\Obj\uart.o" --omf_browse ".\Obj\uart.crf" --depend ".\Obj\uart.d")
+F (..\Common\src\system_LPC11xx.c)(0x4F7131A7)(-c --cpu Cortex-M0 -D__MICROLIB -g -O0 --apcs=interwork -I. -I..\Common\inc -I "C:\Keil\ARM\CMSIS\Include" -I "C:\Keil\ARM\INC\NXP\LPC11xx" -D__DEBUG_FLASH -o ".\Obj\system_lpc11xx.o" --omf_browse ".\Obj\system_lpc11xx.crf" --depend ".\Obj\system_lpc11xx.d")
+F (..\Common\src\core_cm0.c)(0x4E408CD0)(-c --cpu Cortex-M0 -D__MICROLIB -g -O0 --apcs=interwork -I. -I..\Common\inc -I "C:\Keil\ARM\CMSIS\Include" -I "C:\Keil\ARM\INC\NXP\LPC11xx" -D__DEBUG_FLASH -o ".\Obj\core_cm0.o" --omf_browse ".\Obj\core_cm0.crf" --depend ".\Obj\core_cm0.d")
+F (..\Common\src\startup_LPC11xx.s)(0x4E408F4A)(--cpu Cortex-M0 -g --apcs=interwork --pd "__MICROLIB SETA 1" -I "C:\Keil\ARM\CMSIS\Include" -I "C:\Keil\ARM\INC\NXP\LPC11xx" --pd "NO_CRP SETA 1" --list ".\Lst\startup_LPC11xx.lst" --xref -o ".\Obj\startup_LPC11xx.o" --depend ".\Obj\startup_LPC11xx.d")
+F (.\uarttest.c)(0x4F909C40)(-c --cpu Cortex-M0 -D__MICROLIB -g -O0 --apcs=interwork -I. -I..\Common\inc -I "C:\Keil\ARM\CMSIS\Include" -I "C:\Keil\ARM\INC\NXP\LPC11xx" -D__DEBUG_FLASH -o ".\Obj\uarttest.o" --omf_browse ".\Obj\uarttest.crf" --depend ".\Obj\uarttest.d")
+F (.\Read-me.txt)(0x4F5031FD)()

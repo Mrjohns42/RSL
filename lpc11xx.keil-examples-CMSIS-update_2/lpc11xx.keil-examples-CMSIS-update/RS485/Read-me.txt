@@ -1,0 +1,13 @@
+Purpose:
+To implement RS458 protocol on LPC11xx
+
+Running mode:
+* Compile, Flash the program and reset.
+* Setup UART for 115.2K, 8 data bits, no parity, 1 stop bit
+
+Note:
+To get the test result, program the boards with both TX and RX program, 
+power up the board with the RX program first, start the debugger on the
+board with the RX program, power up the board with the TX program, stop 
+the debugger, and check the content of the UARTBuffer on the RX program,
+it should be the same as seen on UARTTxBuffer, 0x01-0x02-0x03.... 

@@ -1,0 +1,1 @@
+-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I. -I..\Common\inc -I C:\Keil\ARM\RV31\Inc -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\NXP\LPC11xx -D__DEBUG_FLASH -o ".\Obj\mpu6050.o" --omf_browse ".\Obj\mpu6050.crf" --depend ".\Obj\mpu6050.d" "..\..\..\gyrocam-master\gyrocam-master\src\drv\mpu6050.c"

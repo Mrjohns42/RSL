@@ -1,0 +1,27 @@
+Purpose:
+To implement CAN APIs on LPC11Cxx
+
+Note:Tested on Keil MCB1000 (LPC11C14)
+
+Running mode:
+* Compile, Flash the program and reset.
+
+Description:
+This project has CAN APIs to implement CAN_send, receive,process message and CAN IRQ handlers.
+The user can configure the target 11Cxx into the following modes
+
+TRANSMIT_ONLY           
+POLLING                 
+LOOPBACK_MODE           
+BASIC_MODE
+ 
+If none of the modes are chosen, RX_TX_Bouncing mode is selected by default.
+
+In the RX_TX bouncing mode, use the CAN traffic analyzer
+  or CAN message generator(e.g. PCAN Viewer or CANalyzer) on a 
+  PC workstation to send messages to LPC11Cxx, once the firmware 
+  receives the matching message, it will send a corresponding message 
+  back to the PC.
+
+CAN Settings-
+Baud rate settings:500Kbits/s

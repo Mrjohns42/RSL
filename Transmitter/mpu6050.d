@@ -1,0 +1,4 @@
+mpu6050.o: ..\LPC1114\nRF24L01\mpu6050.c
+mpu6050.o: ..\LPC1114\nRF24L01\mpu6050.h
+mpu6050.o: ..\LPC1114\nRF24L01\type.h
+mpu6050.o: ..\LPC1114\nRF24L01\i2c.h

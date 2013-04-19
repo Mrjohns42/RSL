@@ -1,0 +1,37 @@
+
+This sample project serves as a simple demonstration to use
+the built-in on-chip CAN and CANopen drivers available on 
+the LPC11C00 NXP microcontroller series.
+
+Hardware Requirements:
+An external CAN Analyzer/Generator is needed to send and
+receive CAN frames to the LPC11C00.
+
+CAN Configuration:
+CAN bus baudrate: 125kbps
+
+Sample Project Details:
+
+1.	Upon reset, the LPC11C00 will send a simple CAN frame
+	using the on-chip CAN drivers. It will send a CAN frame
+	with its data contents of "TEST".
+
+2.	Whenever the LPC11C00 receives a CAN frame whose ID is
+	between 0x400-0x4FF, it will simply resend the received
+	frame back onto the CAN bus.
+
+3.	The LPC11C00 is now also responsive to Expedited SDO
+	transfers. By default, the CANopen ID is 20 (0x14).
+
+4.	While the LPC11C00 isn't sending or receiving CAN frames
+	it will go into SLEEP. It resumes automatically into
+	active mode once it has received a CAN frame.
+
+5.	CAUTION! CAUTION! CAUTION! CAUTION! CAUTION! CAUTION!
+	=====================================================
+	Make sure to reserve memory from 0x1000 0050 - 0x1000 00B8
+	for the on_chip CAN drivers!
+	See the project's Target Options and the LPC11C1x Usermanual
+	for details.
+	=====================================================
+	CAUTION! CAUTION! CAUTION! CAUTION! CAUTION! CAUTION!

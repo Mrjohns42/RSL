@@ -1,0 +1,4 @@
+--cpu Cortex-M0 ".\obj\i2c.o" ".\obj\gyro_main.o" ".\obj\kalman.o" ".\obj\mpu6050.o" ".\obj\core_cm0.o" ".\obj\system_lpc11xx.o" ".\obj\startup_lpc11xx.o" --library_type=microlib --strict --scatter ".\Obj\i2ctest.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\Lst\i2ctest.map" -o ".\Obj\i2ctest.axf"

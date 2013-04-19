@@ -1,0 +1,6 @@
+Purpose:
+Implement UART Auto Baud test and Modem Test on LPC11xx
+
+Running mode:
+* Compile, Flash the program and reset.
+* Setup UART for 9600, 8 data bits, no parity, 1 stop bit

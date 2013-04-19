@@ -1,0 +1,26 @@
+Purpose:
+This example implements Power Management Unit (PMU) on LPC11xx
+
+Note:Tested on Keil MCB1000 
+
+Running mode:
+* Compile, Flash the program and reset.
+* P1_4 is configured as wake up button
+
+Notes:
+The LPC11xx support a variety of power control features. In Active mode, when the chip
+is running, power and clocks to selected peripherals can be optimized for power
+consumption. In addition, there are four special modes of processor power reduction with
+different peripherals running: Sleep mode, Deep-sleep mode, Power-down mode, and
+Deep power-down mode. This example allows the user to put the device into various modes by editing the pmu.h header file.
+
+Description:
+
+** This example puts the LPC11xx part to Sleep,Deep Sleep or Deep Powerdown mode. Power modes can be configured in pmu.h file.
+When TEST_POWERDOWN is enabled, the part is put to Deep Powerdown mode and all LEDs are found to be switched OFF on reset (peripherals).
+To wake up, press P1_4 button on the board and P2_0 is found to be toggling continuosly.
+
+** When TEST_POWERDOWN is not enabled, the user can configure the part to Sleep or Deep Sleep mode based on the flags set in pmu.h.
+To wake up, pin PIO1.0 is to be pulled down.
+
+

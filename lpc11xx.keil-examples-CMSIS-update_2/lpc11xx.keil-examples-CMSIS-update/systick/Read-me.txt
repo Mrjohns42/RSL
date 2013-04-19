@@ -1,0 +1,12 @@
+Purpose:
+Implements Blinky using Systick handler on LPC11xx.
+
+Note:Tested on Keil MCB1000 
+
+Running mode:
+* Compile, Flash the program and reset.
+
+Description:
+SYstick handler setup for 10ms interrupt.
+PIO2_0 is configured as the output bit and toggles continuosly.
+

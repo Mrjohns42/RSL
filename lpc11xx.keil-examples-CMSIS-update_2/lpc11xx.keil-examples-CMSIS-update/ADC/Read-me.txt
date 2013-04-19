@@ -1,0 +1,24 @@
+Purpose:
+A program to implement Analog to  Digital Converter (ADC) example on LPC11xx
+
+Running mode:
+* Compile, Flash the program and reset.
+* Setup UART for 9600, 8 data bits, no parity, 1 stop bit
+* Vary the Pot on board  (AD0)
+
+Output:
+
+Ch CUR MIN MAX
+0 1A6 00A 3FF
+1 3DE 3DA 3E6
+2 3E4 3E0 3E8
+3 3E3 3E1 3E5
+4 3F8 3F4 3FB
+5 3F6 3F5 3FA
+6 3E3 3E1 3E4
+7 3E3 3E2 3E5
+No of Samples: 045
+
+Note:
+ADC ch 4 (AD4) is disabled by default to retain SWD communication.
+If necessary, uncomment line 137 and 138 in adc.c

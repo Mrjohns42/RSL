@@ -1,0 +1,11 @@
+Purpose:
+Program to test GPIO modules
+
+Note:Tested on Keil MCB1000
+
+Running mode:
+* Compile, Flash the program and reset.
+
+Output:
+Based on the input interrupt received on the GPIO ports, the interrupt edge(rising/falling edge or level) 
+is detected and the respective register(SIENR-Set Pin Interrupt Enable (Rising) register,SIENF-Set Pin Interrupt Enable Falling Edge) is set.

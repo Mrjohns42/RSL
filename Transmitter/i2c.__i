@@ -1,0 +1,1 @@
+-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\Inc -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\NXP\LPC11xx -o "i2c.o" --omf_browse "i2c.crf" --depend "i2c.d" "..\LPC1114\nRF24L01\i2c.c"

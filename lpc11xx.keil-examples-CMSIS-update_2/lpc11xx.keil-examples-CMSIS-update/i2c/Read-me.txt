@@ -1,0 +1,6 @@
+Purpose:
+This example is used to test the I2C interfaced to NXP's SE95 temp sensor. 
+LPC MCU is used as a I2C master, the temp sensor is a I2C slave. 
+
+`Running mode:
+* Compile, Flash the program and reset.

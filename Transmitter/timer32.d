@@ -1,0 +1,9 @@
+timer32.o: ..\LPC1114\nRF24L01\timer32.c
+timer32.o: ..\LPC1114\nRF24L01\driver_config.h
+timer32.o: C:\Keil\ARM\Inc\NXP\LPC11xx\LPC11xx.h
+timer32.o: C:\Keil\ARM\CMSIS\Include\core_cm0.h
+timer32.o: C:\Keil\ARM\RV31\Inc\stdint.h
+timer32.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
+timer32.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
+timer32.o: C:\Keil\ARM\Inc\NXP\LPC11xx\system_LPC11xx.h
+timer32.o: ..\LPC1114\nRF24L01\timer32.h

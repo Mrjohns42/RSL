@@ -1,0 +1,11 @@
+Purpose:
+Simple blinky for LPC11xx
+
+Note:
+Tested on Keil MCB1000
+ 
+Running mode:
+* Compile, Flash the program and reset.
+
+Output:
+PIO2_0 toggles continuosly

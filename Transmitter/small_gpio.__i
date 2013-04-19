@@ -1,0 +1,1 @@
+-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\Inc -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\NXP\LPC11xx -o "small_gpio.o" --omf_browse "small_gpio.crf" --depend "small_gpio.d" "..\LPC1114\nRF24L01\small_gpio.c"

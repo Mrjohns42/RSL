@@ -1,0 +1,13 @@
+.\Obj\gyro_main.o: ..\..\..\gyrocam-master\gyrocam-master\src\gyro_main.c
+.\Obj\gyro_main.o: .\driver_config.h
+.\Obj\gyro_main.o: ..\Common\inc\LPC11xx.h
+.\Obj\gyro_main.o: ..\Common\inc\core_cm0.h
+.\Obj\gyro_main.o: C:\Keil\ARM\RV31\Inc\stdint.h
+.\Obj\gyro_main.o: ..\Common\inc\system_LPC11xx.h
+.\Obj\gyro_main.o: .\target_config.h
+.\Obj\gyro_main.o: .\i2c.h
+.\Obj\gyro_main.o: ..\Common\inc\type.h
+.\Obj\gyro_main.o: .\mpu6050.h
+.\Obj\gyro_main.o: .\kalman.h
+.\Obj\gyro_main.o: .\kalman.h
+.\Obj\gyro_main.o: C:\Keil\ARM\RV31\Inc\math.h

@@ -1,0 +1,10 @@
+Purpose:
+Demonstrate 32-bit timer example
+
+Note:Tested on Keil MCB1000 
+
+Running mode:
+* Compile, Flash the program and reset.
+
+Description:
+PIO2_0 is set as the output bit and toggles contiuosly.
