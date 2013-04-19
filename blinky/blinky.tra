@@ -11,7 +11,7 @@
 ### ADS-LD Output File: 'blinky.axf'
 ### ADS-LD Command File: 'blinky.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile 'blinky.lnp', Handle=0x00001D10
+### Creating CmdFile 'blinky.lnp', Handle=0x0000065C
 ### Writing '.lnp' file
 ### ADS-LD Command file 'blinky.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

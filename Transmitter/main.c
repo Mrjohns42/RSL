@@ -51,10 +51,19 @@ void ledOff()
 
 void Led_Blink(void)
 {
+//	ledOn();
+//	Delay_us(5000000);
+//	ledOff();
+//	Delay_us(5000000);
+	unsigned int i;
 	ledOn();
-	Delay_us(50000);
+	for (i = 0; i < 0x0000FFFF; i++)
+	{
+	}
 	ledOff();
-	Delay_us(50000);
+	for (i = 0; i < 0x0000FFFF; i++)
+	{
+	}
 }
 
 void NRF24L01_Receive(char Buf[_Buffer_Size])
@@ -85,24 +94,38 @@ void NRF24L01_Send(char Buf[_Buffer_Size])
 
 int main()
 {
+
 	int i, j = 0;
+	char Buf[_Buffer_Size] = "HOLA\0"; //Hello :)
+	char Address[_Address_Width] = { 0x11, 0x22, 0x33, 0x44, 0x55 };
+		while(1)
+	{
+		Led_Blink();
+	}
 	//SER_init();
 	configureGPIO();
 
-	char Buf[_Buffer_Size] = "HOLA\0"; //Hello :)
+
 
 	SSP_IOConfig(0);
 	SSP_Init(0);		
-	Delay_Init();
-
-	Led_Blink();
-	char Address[_Address_Width] = { 0x11, 0x22, 0x33, 0x44, 0x55 };
-
+//	Delay_Init();
+//	while(1)
+	{
+		Led_Blink();
+	}			
 	NRF24L01_Init(_TX_MODE, _CH, _1Mbps, Address, _Address_Width, _Buffer_Size);
 
 	while (1) {
 		NRF24L01_Send(Buf);
-		Led_Blink();
+		ledOn();
+		for (i = 0; i < 0x0007FFFF; i++)
+		{
+		}
+		ledOff();
+		for (i = 0; i < 0x0007FFFF; i++)
+		{
+		}
 	}
 
 //	while (1)

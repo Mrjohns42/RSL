@@ -5,6 +5,7 @@ void configureGPIO()
 {
 	//enable clocks to GPIO block
 	LPC_SYSCON->SYSAHBCLKCTRL |= (1UL <<  6);
+	LPC_SYSCON->SYSAHBCLKCTRL |= (1UL <<  16);
 
 	//set port 0_7 to output (high current drain in LPC1114)
     LPC_GPIO0->DIR |= (1<<7);

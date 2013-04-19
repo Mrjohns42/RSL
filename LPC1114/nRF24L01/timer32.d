@@ -6,3 +6,4 @@ timer32.o: C:\Keil\ARM\RV31\Inc\stdint.h
 timer32.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
 timer32.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
 timer32.o: C:\Keil\ARM\Inc\NXP\LPC11xx\system_LPC11xx.h
+timer32.o: timer32.h

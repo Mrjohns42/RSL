@@ -138,6 +138,8 @@ char NRF24L01_WriteRegBuf(char Reg, char *Buf, int Size);
 /*
  * NRF24L01 functions
  */
+void NRF24L01_DRint_Init(void);
+
 char NRF24L01_Get_Status(void);
 char NRF24L01_Get_CD(void);
 void NRF24L01_Set_Power(char Mode);

@@ -9,9 +9,9 @@
 
 volatile uint32_t usTicks;
 
-void SysTick_Handler(void) {
-	usTicks++;
-}
+//void SysTick_Handler(void) {
+//	usTicks++;
+//}
 
 void Delay_Init(void) {
 	SysTick_Config(SystemCoreClock / 1000000);

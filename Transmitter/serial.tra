@@ -6,14 +6,17 @@
 ### List of Objects: adding '"main.o"'
 ### List of Objects: adding '"serial.o"'
 ### List of Objects: adding '"retarget.o"'
+### List of Objects: adding '"cpu_lpc1000.o"'
+### List of Objects: adding '"nrf24l01.o"'
+### List of Objects: adding '"ssp.o"'
 ### ADS-LD Command completed:
---cpu Cortex-M0 "startup_lpc11xx.o" "system_lpc11xx.o" "main.o" "serial.o" "retarget.o" --ro-base 0x00000000 --entry 0x00000000 --rw-base 0x10000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--cpu Cortex-M0 "startup_lpc11xx.o" "system_lpc11xx.o" "main.o" "serial.o" "retarget.o" "cpu_lpc1000.o" "nrf24l01.o" "ssp.o" --ro-base 0x00000000 --entry 0x00000000 --rw-base 0x10000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
 --info sizes --info totals --info unused --info veneers 
  --list ".\serial.map" -o "serial.axf"### Preparing Environment (PrepEnvAds)
 ### ADS-LD Output File: 'serial.axf'
 ### ADS-LD Command File: 'serial.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile 'serial.lnp', Handle=0x0000033C
+### Creating CmdFile 'serial.lnp', Handle=0x00000450
 ### Writing '.lnp' file
 ### ADS-LD Command file 'serial.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

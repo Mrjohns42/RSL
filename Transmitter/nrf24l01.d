@@ -1,6 +1,6 @@
-nrf24l01.o: ..\nrf24l01\nrf24l01_tx_lpc11xx\nrf24l01_send_lpc11xx\src\nrf24l01.c
-nrf24l01.o: ..\nrf24l01\nrf24l01_tx_lpc11xx\nrf24l01_send_lpc11xx\src\nrf24l01.h
-nrf24l01.o: ..\nrf24l01\nrf24l01_tx_lpc11xx\nrf24l01_send_lpc11xx\src\cpu_lpc1000.h
+nrf24l01.o: nrf24l01.c
+nrf24l01.o: nrf24l01.h
+nrf24l01.o: cpu_lpc1000.h
 nrf24l01.o: C:\Keil\ARM\Inc\NXP\LPC11xx\LPC11xx.h
 nrf24l01.o: C:\Keil\ARM\CMSIS\Include\core_cm0.h
 nrf24l01.o: C:\Keil\ARM\RV31\Inc\stdint.h

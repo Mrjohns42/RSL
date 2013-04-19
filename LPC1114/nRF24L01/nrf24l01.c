@@ -37,8 +37,11 @@
  Please report any bug and / or solution you find.
 */
 
-#include "nrf24l01.h"	  
+#include "nrf24l01.h"
+#include "timer32.h"	  
 #include "cpu_lpc1000.h" // MCU Specific: LPC13xx, LPC11xx, LPC17xx, Propeller, etc.
+
+
 
 /**
  Read a register
@@ -126,6 +129,19 @@ char NRF24L01_WriteRegBuf(char Reg, char *Buf, int Size) {
 	return Result;
 }
 
+void NRF24L01_DRint_Init(void)
+{
+	char regval;
+	regval = NRF24L01_ReadReg(CONFIG);
+	regval |= 0x30;
+	NRF24L01_WriteReg(CONFIG, regval);
+	//use PIO1_5 for interrupt line
+	LPC_GPIO1->DIR &= ~(1<<5); //input mode
+	LPC_GPIO1->IS  &= ~(1<<5); //edge triggered
+	LPC_GPIO1->IEV |= (1<<5); //negative edge
+	LPC_GPIO1->IC |= (1<<5);
+ 	LPC_GPIO1->IE |= (1<<5);						   
+}
 /**
  Returns the STATUS register
 
@@ -322,16 +338,20 @@ void NRF24L01_Init(char Device_Mode, char CH, char DataRate,
 	// Bit 1: Power Up
 	NRF24L01_WriteReg(W_REGISTER | CONFIG, 0x0A | Device_Mode);//0b00001010 | Device_Mode);
 
-	Delay_us(1500);
+	delay32Us(1, 1500);
+	//Delay_us(1500);
 }
 
 /**
  Turn on transmitter, and transmits the data loaded into the buffer
 */
 void NRF24L01_RF_TX(void) {
+	int i;
 	NRF24L01_CE_LOW;
 	NRF24L01_CE_HIGH;
-	Delay_us(10);
+	delay32Us(1, 10);
+	//Delay_us(10);
+	for(i=0;i<0xFF;i++){}
 	NRF24L01_CE_LOW;
 }
 

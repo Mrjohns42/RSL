@@ -18,7 +18,11 @@
  * use without further testing or modification.
 ****************************************************************************/
 #ifndef __I2C_H 
-#define __I2C_H
+#define __I2C_H	   
+
+#define CONFIG_ENABLE_DRIVER_I2C						1
+#define CONFIG_I2C_DEFAULT_I2C_IRQHANDLER				1
+
 #if CONFIG_ENABLE_DRIVER_I2C==1
 
 /* If I2C SEEPROM is tested, make sure FAST_MODE_PLUS is 0.
@@ -27,7 +31,7 @@ For board to board test, this flag can be turned on. */
 #define FAST_MODE_PLUS	0
 
 #define BUFSIZE             64
-#define MAX_TIMEOUT		0x00FFFFFF
+#define I2C_MAX_TIMEOUT		0x00FFFFFF
 
 #define I2CMASTER		0x01
 #define I2CSLAVE		0x02
@@ -64,8 +68,8 @@ For board to board test, this flag can be turned on. */
 
 #define I2DAT_I2C			0x00000000  /* I2C Data Reg */
 #define I2ADR_I2C			0x00000000  /* I2C Slave Address Reg */
-#define I2SCLH_SCLH			0x00000180  /* I2C SCL Duty Cycle High Reg */
-#define I2SCLL_SCLL			0x00000180  /* I2C SCL Duty Cycle Low Reg */
+#define I2SCLH_SCLH			0x000000E2  /* I2C SCL Duty Cycle High Reg */
+#define I2SCLL_SCLL			0x000000E2  /* I2C SCL Duty Cycle Low Reg */
 #define I2SCLH_HS_SCLH		0x00000015  /* Fast Plus I2C SCL Duty Cycle High Reg */
 #define I2SCLL_HS_SCLL		0x00000015  /* Fast Plus I2C SCL Duty Cycle Low Reg */
 

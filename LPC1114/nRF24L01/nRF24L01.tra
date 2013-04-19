@@ -13,7 +13,6 @@
 ### List of Objects: adding '"crp.o"'
 ### List of Objects: adding '"debug_printf.o"'
 ### List of Objects: adding '"gpio.o"'
-### List of Objects: adding '"i2c.o"'
 ### List of Objects: adding '"i2cslave.o"'
 ### List of Objects: adding '"lpc_swu.o"'
 ### List of Objects: adding '"rs485.o"'
@@ -24,14 +23,16 @@
 ### List of Objects: adding '"uart.o"'
 ### List of Objects: adding '"wdt.o"'
 ### List of Objects: adding '"serial.o"'
+### List of Objects: adding '"mpu6050.o"'
+### List of Objects: adding '"kalman.o"'
 ### ADS-LD Command completed:
---cpu Cortex-M0 "system_lpc11xx.o" "startup_lpc11xx.o" "main.o" "cpu_lpc1000.o" "nrf24l01.o" "retarget.o" "adc.o" "can.o" "clkconfig.o" "crp.o" "debug_printf.o" "gpio.o" "i2c.o" "i2cslave.o" "lpc_swu.o" "rs485.o" "small_gpio.o" "ssp.o" "timer16.o" "timer32.o" "uart.o" "wdt.o" "serial.o" --ro-base 0x00000000 --entry 0x00000000 --rw-base 0x10000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--cpu Cortex-M0 "system_lpc11xx.o" "startup_lpc11xx.o" "main.o" "cpu_lpc1000.o" "nrf24l01.o" "retarget.o" "adc.o" "can.o" "clkconfig.o" "crp.o" "debug_printf.o" "gpio.o" "i2cslave.o" "lpc_swu.o" "rs485.o" "small_gpio.o" "ssp.o" "timer16.o" "timer32.o" "uart.o" "wdt.o" "serial.o" "mpu6050.o" "kalman.o" --ro-base 0x00000000 --entry 0x00000000 --rw-base 0x10000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
 --info sizes --info totals --info unused --info veneers 
  --list ".\nRF24L01.map" -o "nRF24L01.axf"### Preparing Environment (PrepEnvAds)
 ### ADS-LD Output File: 'nRF24L01.axf'
 ### ADS-LD Command File: 'nRF24L01.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile 'nRF24L01.lnp', Handle=0x0000038C
+### Creating CmdFile 'nRF24L01.lnp', Handle=0x00000418
 ### Writing '.lnp' file
 ### ADS-LD Command file 'nRF24L01.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

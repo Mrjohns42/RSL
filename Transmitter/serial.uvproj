@@ -416,6 +416,21 @@
               <FileType>1</FileType>
               <FilePath>.\Retarget.c</FilePath>
             </File>
+            <File>
+              <FileName>cpu_lpc1000.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\cpu_lpc1000.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf24l01.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\nrf24l01.c</FilePath>
+            </File>
+            <File>
+              <FileName>ssp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\ssp.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

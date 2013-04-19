@@ -41,6 +41,51 @@ volatile uint32_t timer32_1_capture = 0;
 #endif //CONFIG_TIMER32_DEFAULT_TIMER32_1_IRQHANDLER
 
 /*****************************************************************************
+** Function name:		delay32Us
+**
+** Descriptions:		Start the timer delay in micro seconds
+**						until elapsed
+**
+** parameters:			timer number, Delay value in milo second			 
+** 						
+** Returned value:		None
+** #Using this for something other than delays requires re-init
+*****************************************************************************/
+void delay32Us(uint8_t timer_num, uint32_t delayInUs)
+{
+    
+  if (timer_num == 0)
+  {
+    /* setup timer #0 for delay */
+   	init_timer32(0, 48); //set to ms
+	LPC_TMR32B0->TCR = 0x01; /* start timer */
+  
+    /* wait until delay time has elapsed */
+    while(LPC_TMR32B0->TC < delayInUs){}
+	reset_timer32(0);
+  }
+  else if (timer_num == 1)
+  {
+    /* setup timer #1 for delay */
+//    LPC_TMR32B1->TCR = 0x02;		/* reset timer */
+//    LPC_TMR32B1->PR  = 0x00;		/* set prescaler to zero */
+//    LPC_TMR32B1->MR0 = delayInMs * ((SystemCoreClock/(LPC_TMR32B0->PR+1)) / 1000);
+//    LPC_TMR32B1->IR  = 0xff;		/* reset all interrrupts */
+//    LPC_TMR32B1->MCR = 0x04;		/* stop timer on match */
+    init_timer32(1,48);
+	LPC_TMR32B1->TCR = 0x01;		/* start timer */
+  
+    /* wait until delay time has elapsed */
+    //while (LPC_TMR32B1->TCR & 0x01);
+  	while(LPC_TMR32B1->TC < delayInUs){}
+	reset_timer32(1);
+  }
+  return;
+}
+
+
+
+/*****************************************************************************
 ** Function name:		delay32Ms
 **
 ** Descriptions:		Start the timer delay in milo seconds
@@ -49,35 +94,36 @@ volatile uint32_t timer32_1_capture = 0;
 ** parameters:			timer number, Delay value in milo second			 
 ** 						
 ** Returned value:		None
-** 
+** #Using this for something other than delays requires re-init
 *****************************************************************************/
 void delay32Ms(uint8_t timer_num, uint32_t delayInMs)
 {
+    
   if (timer_num == 0)
   {
     /* setup timer #0 for delay */
-    LPC_TMR32B0->TCR = 0x02;		/* reset timer */
-    LPC_TMR32B0->PR  = 0x00;		/* set prescaler to zero */
-    LPC_TMR32B0->MR0 = delayInMs * ((SystemCoreClock/(LPC_TMR32B0->PR+1)) / 1000);
-    LPC_TMR32B0->IR  = 0xff;		/* reset all interrrupts */
-    LPC_TMR32B0->MCR = 0x04;		/* stop timer on match */
-    LPC_TMR32B0->TCR = 0x01;		/* start timer */
+   	init_timer32(0, 48000); //set to ms
+	LPC_TMR32B0->TCR = 0x01; /* start timer */
   
     /* wait until delay time has elapsed */
-    while (LPC_TMR32B0->TCR & 0x01);
+    while(LPC_TMR32B0->TC < delayInMs){}
+	reset_timer32(0);
   }
   else if (timer_num == 1)
   {
     /* setup timer #1 for delay */
-    LPC_TMR32B1->TCR = 0x02;		/* reset timer */
-    LPC_TMR32B1->PR  = 0x00;		/* set prescaler to zero */
-    LPC_TMR32B1->MR0 = delayInMs * ((SystemCoreClock/(LPC_TMR32B0->PR+1)) / 1000);
-    LPC_TMR32B1->IR  = 0xff;		/* reset all interrrupts */
-    LPC_TMR32B1->MCR = 0x04;		/* stop timer on match */
-    LPC_TMR32B1->TCR = 0x01;		/* start timer */
+//    LPC_TMR32B1->TCR = 0x02;		/* reset timer */
+//    LPC_TMR32B1->PR  = 0x00;		/* set prescaler to zero */
+//    LPC_TMR32B1->MR0 = delayInMs * ((SystemCoreClock/(LPC_TMR32B0->PR+1)) / 1000);
+//    LPC_TMR32B1->IR  = 0xff;		/* reset all interrrupts */
+//    LPC_TMR32B1->MCR = 0x04;		/* stop timer on match */
+    init_timer32(1,48000);
+	LPC_TMR32B1->TCR = 0x01;		/* start timer */
   
     /* wait until delay time has elapsed */
-    while (LPC_TMR32B1->TCR & 0x01);
+    //while (LPC_TMR32B1->TCR & 0x01);
+  	while(LPC_TMR32B1->TC < delayInMs){}
+	reset_timer32(1);
   }
   return;
 }
@@ -152,7 +198,7 @@ void enable_timer32(uint8_t timer_num)
   {
     LPC_TMR32B0->TCR = 1;
   }
-  else
+  else if( timer_num == 1)
   {
     LPC_TMR32B1->TCR = 1;
   }
@@ -174,7 +220,7 @@ void disable_timer32(uint8_t timer_num)
   {
     LPC_TMR32B0->TCR = 0;
   }
-  else
+  else if( timer_num == 1)
   {
     LPC_TMR32B1->TCR = 0;
   }
@@ -188,7 +234,7 @@ void disable_timer32(uint8_t timer_num)
 **
 ** parameters:			timer number: 0 or 1
 ** Returned value:		None
-** 
+** NOTE: TIMER STAYS RESET UNTIL ENABLE
 ******************************************************************************/
 void reset_timer32(uint8_t timer_num)
 {
@@ -200,7 +246,7 @@ void reset_timer32(uint8_t timer_num)
     regVal |= 0x02;
     LPC_TMR32B0->TCR = regVal;
   }
-  else
+  else if (timer_num == 1)
   {
     regVal = LPC_TMR32B1->TCR;
     regVal |= 0x02;
@@ -208,6 +254,31 @@ void reset_timer32(uint8_t timer_num)
   }
   return;
 }
+
+/******************************************************************************
+** Function name:		read_timer
+**
+** Descriptions:		Read timer
+**
+** parameters:			timer number: 0 or 1
+** Returned value:		Value of timer register
+** 
+******************************************************************************/
+uint32_t read_timer32(uint8_t timer_num)
+{
+  uint32_t regVal;
+
+  if ( timer_num == 0 )
+  {
+    regVal = LPC_TMR32B0->TC;
+  }
+  else if (timer_num == 1)
+  {
+    regVal = LPC_TMR32B1->TC;
+  }
+  return regVal;
+}
+
 
 /******************************************************************************
 ** Function name:		init_timer
@@ -225,75 +296,18 @@ void init_timer32(uint8_t timer_num, uint32_t TimerInterval)
   {
     /* Some of the I/O pins need to be carefully planned if
     you use below module because JTAG and TIMER CAP/MAT pins are muxed. */
-    LPC_SYSCON->SYSAHBCLKCTRL |= (1<<9);
-    LPC_IOCON->PIO1_5 &= ~0x07;	/*  Timer0_32 I/O config */
-    LPC_IOCON->PIO1_5 |= 0x02;	/* Timer0_32 CAP0 */
-    LPC_IOCON->PIO1_6 &= ~0x07;
-    LPC_IOCON->PIO1_6 |= 0x02;	/* Timer0_32 MAT0 */
-    LPC_IOCON->PIO1_7 &= ~0x07;
-    LPC_IOCON->PIO1_7 |= 0x02;	/* Timer0_32 MAT1 */
-    LPC_IOCON->PIO0_1 &= ~0x07;	
-    LPC_IOCON->PIO0_1 |= 0x02;	/* Timer0_32 MAT2 */
-#ifdef __JTAG_DISABLED
-    LPC_IOCON->JTAG_TDI_PIO0_11 &= ~0x07;	
-    LPC_IOCON->JTAG_TDI_PIO0_11 |= 0x03;	/* Timer0_32 MAT3 */
-#endif
-#if CONFIG_TIMER32_DEFAULT_TIMER32_0_IRQHANDLER==1
-    timer32_0_counter = 0;
-    timer32_0_capture = 0;
-#endif //TIMER32_0_DEFAULT_HANDLER
-    LPC_TMR32B0->MR0 = TimerInterval;
-#if TIMER_MATCH
-	LPC_TMR32B0->EMR &= ~(0xFF<<4);
-	LPC_TMR32B0->EMR |= ((0x3<<4)|(0x3<<6)|(0x3<<8)|(0x3<<10));	/* MR0/1/2/3 Toggle */
-#else
-	/* Capture 0 on rising edge, interrupt enable. */
-	LPC_TMR32B0->CCR = (0x1<<0)|(0x1<<2);
-#endif
-    LPC_TMR32B0->MCR = 3;			/* Interrupt and Reset on MR0 */
+      LPC_SYSCON->SYSAHBCLKCTRL |= (1<<9);
+	  reset_timer32(0);
+	  LPC_TMR32B0->PR = TimerInterval; //48 should yield microseconds
 
-#if CONFIG_TIMER32_DEFAULT_TIMER32_0_IRQHANDLER==1
-    /* Enable the TIMER0 Interrupt */
-    NVIC_EnableIRQ(TIMER_32_0_IRQn);
-#endif
   }
   else if ( timer_num == 1 )
   {
     /* Some of the I/O pins need to be clearfully planned if
     you use below module because JTAG and TIMER CAP/MAT pins are muxed. */
     LPC_SYSCON->SYSAHBCLKCTRL |= (1<<10);
-#ifdef __JTAG_DISABLED
-    LPC_IOCON->JTAG_TMS_PIO1_0  &= ~0x07;	/*  Timer1_32 I/O config */
-    LPC_IOCON->JTAG_TMS_PIO1_0  |= 0x03;	/* Timer1_32 CAP0 */
-    LPC_IOCON->JTAG_TDO_PIO1_1  &= ~0x07;	
-    LPC_IOCON->JTAG_TDO_PIO1_1  |= 0x03;	/* Timer1_32 MAT0 */
-    LPC_IOCON->JTAG_nTRST_PIO1_2 &= ~0x07;
-    LPC_IOCON->JTAG_nTRST_PIO1_2 |= 0x03;	/* Timer1_32 MAT1 */
-    LPC_IOCON->ARM_SWDIO_PIO1_3  &= ~0x07;
-    LPC_IOCON->ARM_SWDIO_PIO1_3  |= 0x03;	/* Timer1_32 MAT2 */
-#endif
-    LPC_IOCON->PIO1_4 &= ~0x07;
-    LPC_IOCON->PIO1_4 |= 0x02;		/* Timer0_32 MAT3 */
-
-#if CONFIG_TIMER32_DEFAULT_TIMER32_1_IRQHANDLER==1
-    timer32_1_counter = 0;
-    timer32_1_capture = 0;
-#endif //TIMER32_1_DEFAULT_HANDLER
-
-    LPC_TMR32B1->MR0 = TimerInterval;
-#if TIMER_MATCH
-	LPC_TMR32B1->EMR &= ~(0xFF<<4);
-	LPC_TMR32B1->EMR |= ((0x3<<4)|(0x3<<6)|(0x3<<8)|(0x3<<10));	/* MR0/1/2 Toggle */
-#else
-	/* Capture 0 on rising edge, interrupt enable. */
-	LPC_TMR32B1->CCR = (0x1<<0)|(0x1<<2);
-#endif
-    LPC_TMR32B1->MCR = 3;			/* Interrupt and Reset on MR0 */
-
-#if CONFIG_TIMER32_DEFAULT_TIMER32_1_IRQHANDLER==1
-    /* Enable the TIMER1 Interrupt */
-    NVIC_EnableIRQ(TIMER_32_1_IRQn);
-#endif
+	reset_timer32(1);
+	LPC_TMR32B1->PR = TimerInterval;
   }
   return;
 }

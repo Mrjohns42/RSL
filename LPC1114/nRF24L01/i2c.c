@@ -251,6 +251,7 @@ uint32_t I2CInit( uint32_t I2cMode )
 //  LPC_IOCON->PIO0_4 |= (0x1<<10);	/* open drain pins */
 //  LPC_IOCON->PIO0_5 |= (0x1<<10);	/* open drain pins */
 
+
   /*--- Clear flags ---*/
   LPC_I2C->CONCLR = I2CONCLR_AAC | I2CONCLR_SIC | I2CONCLR_STAC | I2CONCLR_I2ENC;    
 
@@ -306,7 +307,7 @@ uint32_t I2CEngine( void )
 
   while ( I2CMasterState == I2C_BUSY )
   {
-	if ( timeout >= MAX_TIMEOUT )
+	if ( timeout >= I2C_MAX_TIMEOUT )
 	{
 	  I2CMasterState = I2C_TIME_OUT;
 	  break;

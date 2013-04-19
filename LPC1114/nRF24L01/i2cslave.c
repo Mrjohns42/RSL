@@ -158,6 +158,8 @@ void I2CSlaveInit( void )
   LPC_IOCON->PIO0_5 &= ~0x3F;	
   LPC_IOCON->PIO0_5 |= 0x01;		/* I2C SDA */
 
+  LPC_IOCON->PIO0_4 = 0xC1U; /* P0.4 = SCL */
+  LPC_IOCON->PIO0_5 = 0xC1U; /* P0.5 = SDA */
   /*--- Clear flags ---*/
   LPC_I2C->CONCLR = I2CONCLR_AAC | I2CONCLR_SIC | I2CONCLR_STAC | I2CONCLR_I2ENC;    
 
