@@ -32,7 +32,7 @@
 ### ADS-LD Output File: 'nRF24L01.axf'
 ### ADS-LD Command File: 'nRF24L01.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile 'nRF24L01.lnp', Handle=0x00000418
+### Creating CmdFile 'nRF24L01.lnp', Handle=0x000008F8
 ### Writing '.lnp' file
 ### ADS-LD Command file 'nRF24L01.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

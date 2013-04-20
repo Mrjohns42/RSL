@@ -41,6 +41,7 @@ if SystemFrequency = 60Mhz, SystemAHBFrequency = 1/4 SystemAHBFrequency,
 10mSec = 150.000-1 counts */
 
 //ASSUMES 48kHz clock
+
 void delay32Us(uint8_t timer_num, uint32_t delayInUs);
 void delay32Ms(uint8_t timer_num, uint32_t delayInMs);
 
