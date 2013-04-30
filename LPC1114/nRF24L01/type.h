@@ -29,6 +29,7 @@ typedef unsigned short     int uint16_t;
 typedef unsigned           int uint32_t;
 typedef unsigned       __int64 uint64_t;
 
+
 #endif // __GNUC__ 
 
 #ifndef NULL

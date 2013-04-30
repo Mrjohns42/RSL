@@ -1,0 +1,759 @@
+The VideoLAN team would like to acknowledge the following contributors:
+
+Programming
+-----------
+Rémi Denis-Courmont
+Jean-Baptiste Kempf
+Laurent Aimar
+Gildas Bazin
+Pierre d'Herbemont
+Rafaël Carré
+Felix Paul Kühne
+Rémi Duraffort
+Derk-Jan Hartman
+Antoine Cellerier
+Samuel Hocevar
+Jean-Paul Saman
+Christophe Mutricy
+Clément Stenac
+Christophe Massiot
+Ilkka Ollakka
+Pierre Ynard
+Damien Fouilleul
+Sigmund Augdal Helberg
+Erwan Tulou
+Olivier Teulière
+Cyril Deguet
+Eric Petit
+Filippo Carone
+Rocky Bernstein
+François Cartegnie
+Olivier Aubert
+Jakob Leben
+Benjamin Pracht
+Pavlov Konstantin
+Jean-Philippe André
+Hugo Beauzée-Luyssen
+Steve Lhomme
+Stéphane Borel
+JP Dinger
+David Fuhrmann
+Geoffroy Couprie
+Marian Ďurkovič
+Yoann Peronneau
+Jon Lech Johansen
+Sébastien Escudier
+Dennis van Amerongen
+Ludovic Fauvet
+Jérôme Decoodt
+KO Myung-Hun
+Faustino Osuna
+Loïc Minier
+David Flynn
+Mark Moriarty
+Fabio Ritrovato
+Mirsal Ennaime
+Tony Castley
+Srikanth Raju
+Kaarlo Raiha
+Michel Kaempf
+Jean-Marc Dressler
+Johan Bilien
+Vincent Seguin
+Martin Storsjö
+Simon Latapie
+Bernie Purcell
+Denis Charmet
+Henri Fallon
+Edward Wang
+Emmanuel Puig
+Sebastien Zwickert
+Christoph Miebach
+Adrien Maglo
+Renaud Dartus
+Alexis de Lattre
+Vincent Penquerc'h
+Arnaud de Bossoreille de Ribou
+Mohammed Adnène Trojette
+Boris Dorès
+Jai Menon
+Anil Daoud
+Pierre Baillet
+Daniel Mierswa
+Dominique Leuenberger
+Rob Jonson
+Andre Pang
+Akash Mehrotra
+André Weber
+Anthony Loiseau
+Lukas Durfina
+Xavier Marchesini
+Éric Lassauge
+Cyril Mathé
+Juha Jeronen
+Juho Vähä-Herttua
+Ken Self
+Alexis Ballier
+Richard Hosking
+Marc Ariberti
+Benoit Steiner
+Michel Lespinasse
+Naohiro Koriyama
+Carlo Calabrò
+Nicolas Chauvet
+Brad Smith
+Cheng Sun
+Alexey Sokolov
+Basos G
+Philippe Morin
+Tobias Güntner
+Vicente Jimenez Aguilar
+Yuval Tze
+Brendon Justin
+Yves Duret
+Frédéric Yhuel
+Michael Hanselmann
+Alexander Lakhin
+Damien Lucas
+Richard Shepherd
+Sébastien Toque
+Benjamin Drung
+Gaël Hendryckx
+Grigori Goronzy
+Stephan Assmus
+Adrien Grand
+Colin Guthrie
+David Menestrina
+Dominique Martinet
+Jason Luka
+Luc Saillard
+Pankaj Yadav
+Ramiro Polla
+Steinar H. Gunderson
+Can Wu
+Christophe Courtaut
+Hannes Domani
+Manol Manolov
+Rui Zhang
+Antoine Lejeune
+Arnaud Schauly
+Branko Kokanovic
+Dylan Yudaken
+Florian G. Pflug
+G Finch
+Keary Griffin
+Konstanty Bialkowski
+Przemyslaw Fiala
+Tanguy Krotoff
+David Kaplan
+Devin Heitmueller
+Eugenio Jarosiewicz
+Fabian Keil
+Guillaume Poussel
+John Peterson
+Justus Piater
+Luca Barbato
+Martin T. H. Sandsmark
+Rune Botten
+Søren Bøg
+Toralf Niebuhr
+Austin Burrow
+Bill C. Riemers
+Casian Andrei
+Chris Smowton
+Colin Delacroix
+Cristian Maglie
+Elminster2031
+François Revol
+Jakub Wieczorek
+Martin Briza
+Mike Houben
+Romain Goyet
+Timothy B. Terriberry
+Adrian Yanes
+Alex Merry
+Arai/Fujisawa Tooru
+Aurélien Nephtali
+Barry Wardell
+Ben Hutchings
+Besnard Jean-Baptiste
+Brian Weaver
+Clement Chesnin
+Jonathan Rosser
+Joris van Rooij
+Kaloyan Kovachev
+Katsushi Kobayashi
+Loren Merritt
+Maciej Blizinski
+Mark Bidewell
+Mark Hassman
+Michael Feurstein
+Miguel Angel Cabrera Moya
+Ming Hu
+Niles Bindel
+Scott Caudle
+Sean Robinson
+Simon Hailes
+Thierry Reding
+Xavier Martin
+Alex Converse
+Alexander Bethke
+Andres Krapf
+Andri Pálsson
+Andy Chenee
+Anuradha Suraparaju
+Benjamin Poulain
+Brieuc Jeunhomme
+Chris Clayton
+Christopher Mueller
+Cédric Cocquebert
+Daniel Peng
+Danny Wood
+David K
+Edouard Gomez
+Emmanuel de Roux
+Frode Tennebø
+GBX
+Georgi Chorbadzhiyski
+Jan Winter
+Jean-François Massol
+Jean-Philippe Grimaldi
+John Freed
+Jon Stacey
+Kai Lauterbach
+Kelly Anderson
+Konstantin Bogdanov
+Kuan-Chung Chiu
+Mark Lee
+Matthias Dahl
+Michael McEll
+Michael Ploujnikov
+Mike Schrag
+Niklas Hayer
+Olivier Gambier
+Paul Corke
+Ron Frederick
+Ronald Wright
+Rov Juvano
+Sabourin Gilles
+Sam Lade
+Sasha Koruga
+Sreng Jean
+Sven Petai
+Tomer Barletz
+Tristan Leteurtre
+Wang Bo
+Zoran Turalija
+maxime Ripard
+xxcv
+Adam Hoka
+Adrian Knoth
+Adrien Cunin
+Alan Fischer
+Alex Helfet
+Alexandre Ferreira
+Alina Friedrichsen
+An L. Ber
+Andreas Schlick
+Andrey Makhnutin
+Arnaud Vallat
+Ashok Bhat
+Austin English
+Baptiste Coudurier
+Benoit Calvez
+Björn Stenberg
+Blake Livingston
+Brandon Brooks
+Brian Johnson
+Brian Kurle
+Chris White
+Christian Masus
+Christoph Seibert
+Christopher Key
+Christopher Rath
+Claudio Ortelli
+Clement Lecigne
+Clément Lecigne
+Cody Russell
+Cristian Morales Vega
+Dan Rosenberg
+Daniel Marth
+Daniel Tisza
+Detlef Schroeder
+Diego Fernando Nieto
+Dominik 'Rathann' Mierzejewski
+Edward Sheldrake
+Elliot Murphy
+Eren Inan Canpolat
+Ernest E. Teem III
+Etienne Membrives
+Fargier Sylvain
+Fathi Boudra
+Felix Geyer
+Filipe Azevedo
+Florian Hubold
+Florian Roeske
+Frank Enderle
+Frédéric Crozat
+Gaurav Narula
+Georg Seifert
+Geraud CONTINSOUZAS
+Gertjan Van Droogenbroeck
+Gilles Chanteperdrix
+Greg Farrell
+Gregory Maxwell
+Gwenole Beauchesne
+Götz Waschk
+Hans-Kristian Arntzen
+Harry Sintonen
+Iain Wade
+Ibraheem Paredath
+Isamu Arimoto
+James Bond
+James Turner
+Janne Kujanpää
+Jarmo Torvinen
+Jason Scheunemann
+Jeff Lu
+Jeroen Ost
+Joe Taber
+Johann Ransay
+Johannes Weißl
+John Hendrikx
+John Stebbins
+Jonas Gehring
+Joseph S. Atkinson
+Josh Watzman
+Juergen Lock
+Julien / Gellule
+Julien Humbert
+Kamil Baldyga
+Kamil Klimek
+Karlheinz Wohlmuth
+Kevin DuBois
+Lari Natri
+Lorenzo Pistone
+Lucas C. Villa Real
+Lukáš Lalinský
+Mal Graty
+Malte Tancred
+Martin Pöhlmann
+Marton Balint
+Mathew King
+Mathieu Sonet
+Matthew A. Townsend
+Matthias Bauer
+Mika Tiainen
+Mike Cardillo
+Mounir Lamouri (volkmar)
+Natanael Copa
+Nathan Phillip Brink
+Nick Briggs
+Nick Pope
+Nickolai Zeldovich
+Peter Bak Nielsen
+Phil Roffe and David Grellscheid
+Pierre Souchay
+Piotr Fusik
+Pádraig Brady
+R.M
+Ralph Giles
+Robert Jedrzejczyk
+Robert Paciorek
+Rolf Ahrenberg
+Roman Pen
+Ruud Althuizen
+Samuli Suominen
+Scott Lyons
+Sebastian Birk
+Sergey Puzanov
+Sharad Dixit
+Song Ye Wen
+Stephan Krempel
+Stephen Parry
+Steven Kramer
+Steven Sheehy
+Sveinung Kvilhaugsvik
+Sylvain Cadhillac
+Theron Lewis
+Thijs Alkemade
+Timo Paulssen
+Timo Rothenpieler
+Tomasen
+Tony Vankrunkelsven
+Tristan Heaven
+Varphone Wong
+Yannick Bréhon
+Yavor Doganov
+Yohann Martineau
+dharani.prabhu.s
+suheaven
+wucan
+김정은
+Adam Sampson
+Alexander Gall
+Alex Antropoff
+Alexis Guillard
+Alex Izvorski
+Amir Gouini
+Andrea Guzzo
+Andrew Flintham
+Andrew Zaikin
+Andy Lindsay
+Arkadiusz Miskiewicz
+Arnaud Gomes-do-Vale
+Arwed v. Merkatz
+Barak Ori
+Basil Achermann
+Benjamin Mironer
+Bill
+Bob Maguire
+Brian C. Wiles
+Brian Raymond
+Brian Robb
+Carsten Gottbehüt
+Carsten Haitzler
+Charles Hordis
+Chris Clepper
+Christian Henz
+Christof Baumgaertner
+Christophe Burgalat
+Christopher Johnson
+Cian Duffy
+Colin Simmonds
+Damian Ivereigh
+Daniel Fischer
+Daniel Stränger
+Danko Dolch
+Dennis Lou
+Dermot McGahon
+Diego Petteno
+Douglas West
+Dugal Harris
+Emmanuel Blindauer
+Enrico Gueli
+Enrique Osuna
+Eren Türkay
+Eric Dudiak
+Espen Skoglund
+Ethan C. Baldridge
+François Seingier
+Frans van Veen
+Frédéric Ruget
+Gerald Hansink
+Gisle Vanem
+Glen Gray
+Goetz Waschk
+Gregory Hazel
+Gustaf Neumann
+Hang Su
+Hans Lambermont
+Hans-Peter Jansen
+Harris Dugal
+Heiko Panther
+Igor Helman
+Isaac Osunkunle
+Jan David Mol
+Jan Gerber
+Jan Van Boghout
+Jasper Alias
+Jean-Alexis Montignies
+Jean-Baptiste Le Stang
+Jeffrey Baker
+Jeroen Massar
+Jérôme Guilbaud
+Johannes Buchner
+Johen Michael Zorko
+Johnathan Rosser
+John Dalgliesh
+John Paul Lorenti
+Jörg
+Joseph Tulou
+Julien Blache
+Julien Plissonneau Duquène
+Julien Robert
+Kenneth Ostby
+Kenneth Self
+Kevin H. Patterson
+Koehler, Vitally
+K. Staring
+Lahiru Lakmal Priyadarshana
+Laurent Mutricy
+Leo Spalteholz
+Loox Thefuture
+Marc Nolette
+Marco Munderloh
+Mark Gritter
+Markus Kern
+Markus Kuespert
+Martin Hamrle
+Martin Kahr
+Mateus Krepsky Ludwich
+Mathias Kretschmer
+Mats Rojestal
+Matthias P. Nowak
+Matthieu Lochegnies
+Michael Mondragon
+Michael S. Feurstein
+Michel Lanners
+Mickael Hoerdt
+Miguel Angel Cabrera
+Mikko Hirvonen
+Moritz Bunkus
+Nilmoni Deb
+Olivier Houchard
+Olivier Pomel
+Ondrej Kuda aka Albert
+Øyvind Kolbu
+Pascal Levesque
+Patrick Horn
+Patrick McLean
+Pauline Castets
+Paul Mackerras
+Peter Surda
+Petr Vacek
+Philippe Van Hecke
+Pierre-Luc Beaudoin
+Pierre Marc Dumuid
+Régis Duchesne
+Remco Poortinga
+Rene Gollent
+Rob Casey
+Robson Braga Araujo
+Roine Gustafsson
+Roman Bednarek
+Rudolf Cornelissen
+Sašo Kiselkov
+Sebastian Jenny
+Shane Harper
+Stefán Freyr Stefánsson
+Steve Brown
+Steven M. Schultz
+Tapio Hiltunen
+Thomas L. Wood
+Thomas Mühlgrabner
+Thomas Parmelan
+Tim 'O Callagha
+Tim Schuerewegen
+Tong Ka Man
+Torsten Spindler
+Udo Richter
+Vincent Dimar
+Vincent Penne
+Vitalijus Slavinskas
+Vitaly V. Bursov
+Vladimir Chernyshov
+Wade Majors
+Wallace Wadge
+Watanabe Go
+William Hawkins
+Xavier Maillard
+Ye zhang
+Yuehua Zhao
+
+Artwork
+-------
+Damien Erambert
+Daniel Dreibrodt, aka aLtgLasS
+David Weber
+Davor Orel
+Dominic Spitaler
+Eurodata Computer Club
+Geoffrey Roussel
+Joeri van Dooren
+kty0ne
+Max Rudberg
+Richard Øiestad
+Simon Damkjær Andersen
+Tom Bigelajzen
+Vincent van den Heuvel
+
+Documentation
+-------------
+Bill Eldridge
+
+Localization
+------------
+Abdul Fousan - Tamil
+A. Decorte - Friulian
+Adem Gunes - Turkish
+Adi Nugroho - Tagalog
+Adnan Memija - Bosnian
+airplanez - Korean
+Ajith Manjula - Sinhala
+Alexander Didebulidze - Georgian
+Alexander Henket - Dutch
+Alexander Lakhin - Russian
+Alexey Lugin - Ukrainian
+Alexey Salmin - Russian
+Alfred John - Acoli
+Amanpreet Singh Alam - Punjabi
+André de Barros Martins Ribeiro - Brazilian portuguese
+Andrey Brilevskiy - Russian
+Andrey Wolk - Russian
+Andri Pálsson - Icelandic
+Anh Phan - Vietnamese
+Animesh Swar - Nepalese
+Ara Bextiyar - Sorani (Kurdish)
+Ari Constâncio - Portuguese
+Arkadiusz Lipiec - Polish
+Ask Hjorth Larsen - Danish
+Audrey Prevost - French
+Auk Piseth - Khmer
+Bayarsaikhan Enkhtaivan Баярсайхан Энхтайван - Mongolian
+Biraj Karmakar - Bengali
+Bruno Queirós - Portuguese
+Bruno Vella - Italian
+Carlo Calabrò - Italian
+Chandan Kumar - Hindi
+Christoph Miebach - German
+Circo Radu - Romanian
+Cristian Secară - Romanian
+Daniel Nylander - Swedish
+David González - Spanish
+David Planella - Catalan
+Dean Lee - Chinese
+Denis Arnaud - Breton
+Derk-Jan Hartman - Dutch
+DirektX - Hungarian
+Dominko Aždajić - Croatian
+Dylan Aïssi - French
+Eduard Babayan - Armenian
+Eero - Estonian
+Eirik U. Birkeland - Norwegian Nynorsk
+Elizabeth Da Conceicao Baptista - Tetum
+Emilio Sepúlveda - Interlingua
+Éric Lassauge - French
+Farzaneh Sarafraz - Persian
+Florence Tushabe - Chiga
+Fouzia Bourai - Arabic
+Frank Chao - Chinese Traditional
+Freyr Gunnar Ólafsson - Icelandic
+Friedel Wolff - Afrikaans
+Fumio Nakayama - Japanese
+Gabor Kelemen - Hungarian
+Gaurav Kumar - Hindi
+Gaëtan Rousseaux - Walloon
+Ghjuvan Pasquinu - Corsican
+Goce Manevski - Macedonian
+Golam Maruf Oovee - Bengali
+Gonçalo Cordeiro - Galician
+Gorana Milicevic - Serbian
+Goswami Hardikpuri Kishorpuri - Gujarati
+Haakon Meland Eriksen - Norwegian
+Han HoJoong - Korean
+Hemanta Nandi - Bengali
+H.Shalitha Vikum - Sinhala
+Ibrahima Sarr - Peul
+Israt Jahan - Bengali
+Ivar Smolin - Estonian
+Iván Seoane Pardo - Galician
+Ivo Ivanov - Bulgarian
+Iñigo Varela - Asturian; Bable
+Jakub Žáček - Czech
+James Olweny - Ganda
+Jamil Ahmed - Bengali
+Javier Varela - Spanish
+Jean-Pierre Kuypers - French
+Jens Seidel - German
+Joel Arvidsson - Swedish
+jogijs - Latvian
+Jonas Larsen - Danish
+Jon Stødle - Norwegian Nynorsk
+Jouni Kähkönen - Finnish
+Juha Jeronen - Finnish
+Kai Hermann - German
+Kamil Páral - Czech
+Kang Jeong-Hee - Korean
+Kaya Zeren - Turkish
+Khin Mi Mi Aung - Burmese
+Khoem Sokhem - Khmer
+Kola - Albanian
+Kypchak Kypchak - Kazakh
+Laurent Jonqueres - Occitan
+Loba Yeasmeen - Bengali
+Lorena Gomes - Catalan
+Luqman Hakim - Indonesian
+Mahrazi Mohd Kamal - Malay
+Manolis Stefanis - Modern Greek
+Marián Hikaník - Slovak
+Mario Siegmann - German
+Marko Uskokovic - Serbian
+Martin Zicha - Czech
+Matej Urbančič - Slovenian
+Mathias C. Berens, welcome-soft - German
+Mattias Põldaru - Estonian
+Md. Rezwan Shahid - Bengali
+Meelad Zakaria - Persian
+Michael Bauer - Gaelic; Scottish Gaelic
+Michal Halenka - Czech
+Michał Trzebiatowski - Polish
+Mihkel Kirjutas - Estonian
+Mindaugas Baranauskas - Lithuanian
+Miroslav Oujeský - Czech
+Morten Brix Pedersen - Danish
+Mustafa Sandal - Czech
+Myckel Habets - Dutch
+Namhyung Kim - Korean
+Niels Fanøe - Danish
+Niklas 'Nille' Åkerström - Swedish
+Olav Dahlum - Norwegian
+Oleksandr Natalenko - Ukrainian
+Omer Ensari - Kurmanji (Kurdish)
+Osama Khalid - Arabic
+Otto Kekäläinen - Finnish
+Paula Iglesias - Galician
+Phan Anh - Vietnamese
+Philipp Weissenbacher - German
+Pittayakom Saingtong - Thai
+Praveen Illa - Telugu
+Predrag Ljubenović - Serbian
+Rajnikant Kumbhar - Marathi
+Ricardo Perdigão - Portuguese
+Ricardo Pérez López - Spanish
+Roustam Ghizdatov - Russian
+Ruei-Yuan Lu - Chinese Traditional
+Sadia Afroz - Bengali
+Said Marjan Zazai - Pashto
+Salar Khalilzadeh - Persian
+Sam Hocevar - British
+Samuel Hocevar - French
+Sayan Chowdhury - Hindi
+Seanán Ó Coistín - Irish
+Shashi Ranjan - Hindi
+Siarhei Daryichau Дар'ічаў Сяргей - Belarusian
+Sidney Doria - Brazilian Portuguese
+Sigmund Augdal - Norwegian
+Simos Xenitellis - Greek
+Sipho Sibiya - Zulu
+Sok Sophea - Khmer
+Solomon Gizaw - Amharic
+Sreejith P - Malayalam
+Sveinn í Felli - Icelandic
+Tadashi Jokagi - Japanese
+T. Chomphuming - Thai
+Tero Pelander - Finnish
+Thomas De Rocker - Dutch
+Thomas Graf - gettext support, German
+Tomáš Chvátal - Czech
+Tòni Galhard - Occitan
+Umesh Agarwal - Bengali
+Umidjon Almasov - Uzbek
+Václav Pavlíček - Czech
+Valek Filippov - Russian
+Vicente Jimenez Aguilar - Spanish
+Vincenzo Reale - Italian
+Vít Pelčák - Czech
+viyyer - Hindi
+Vladimir Yermolayev - Russian
+Vojtěch Smejkal - Czech
+Wei Mingzhi - Simplified Chinese
+Xabier Aramendi - Basque
+Xènia Albà Cantero - Catalan
+Xuacu Saturio - Asturian
+Yaron Shahrabani - Hebrew
+Yaşar Tay - Turkish
+Yoyo - Simplified Chinese
+Yuksel Yildirim - Turkish
+Zabeeh Khan - Pashto
+Zhang Tong - Chinese

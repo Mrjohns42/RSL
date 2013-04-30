@@ -462,11 +462,6 @@
               <FilePath>.\gpio.c</FilePath>
             </File>
             <File>
-              <FileName>i2c.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\i2c.c</FilePath>
-            </File>
-            <File>
               <FileName>i2cslave.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\i2cslave.c</FilePath>
@@ -512,16 +507,6 @@
               <FilePath>.\wdt.c</FilePath>
             </File>
             <File>
-              <FileName>Serial.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\serial\Serial.c</FilePath>
-            </File>
-            <File>
-              <FileName>i2c.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\i2c.h</FilePath>
-            </File>
-            <File>
               <FileName>mpu6050.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\mpu6050.c</FilePath>
@@ -550,6 +535,11 @@
               <FileName>timer32.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\timer32.h</FilePath>
+            </File>
+            <File>
+              <FileName>uart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\uart.h</FilePath>
             </File>
           </Files>
         </Group>

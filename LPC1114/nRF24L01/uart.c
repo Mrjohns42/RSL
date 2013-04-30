@@ -14,7 +14,7 @@
 
 volatile uint32_t UARTStatus;
 volatile uint8_t  UARTTxEmpty = 1;
-volatile uint8_t  UARTBuffer[BUFSIZE];
+volatile uint8_t  UARTBuffer[UARTBUFSIZE];
 volatile uint32_t UARTCount = 0;
 
 #if CONFIG_UART_DEFAULT_UART_IRQHANDLER==1
@@ -54,7 +54,7 @@ void UART_IRQHandler(void)
       /* If no error on RLS, normal ready, save into the data buffer. */
       /* Note: read RBR will clear the interrupt */
       UARTBuffer[UARTCount++] = LPC_UART->RBR;
-      if (UARTCount == BUFSIZE)
+      if (UARTCount == UARTBUFSIZE)
       {
         UARTCount = 0;		/* buffer overflow */
       }	
@@ -64,7 +64,7 @@ void UART_IRQHandler(void)
   {
     /* Receive Data Available */
     UARTBuffer[UARTCount++] = LPC_UART->RBR;
-    if (UARTCount == BUFSIZE)
+    if (UARTCount == UARTBUFSIZE)
     {
       UARTCount = 0;		/* buffer overflow */
     }
@@ -151,7 +151,6 @@ void ModemInit( void )
 *****************************************************************************/
 void UARTInit(uint32_t baudrate)
 {
-  uint32_t Fdiv;
   uint32_t regVal;
 
   UARTTxEmpty = 1;
@@ -159,23 +158,43 @@ void UARTInit(uint32_t baudrate)
   
   NVIC_DisableIRQ(UART_IRQn);
 
+   /* configure PINs GPIO1.6, GPIO1.7, GPIO 1.8 for UART */
+  LPC_SYSCON->SYSAHBCLKCTRL |= ((1UL <<  6) |   /* enable clock for GPIO      */
+                                (1UL << 16) );  /* enable clock for IOCON     */
+
   LPC_IOCON->PIO1_6 &= ~0x07;    /*  UART I/O config */
   LPC_IOCON->PIO1_6 |= 0x01;     /* UART RXD */
   LPC_IOCON->PIO1_7 &= ~0x07;	
   LPC_IOCON->PIO1_7 |= 0x01;     /* UART TXD */
-  /* Enable UART clock */
-  LPC_SYSCON->SYSAHBCLKCTRL |= (1<<12);
-  LPC_SYSCON->UARTCLKDIV = 0x1;     /* divided by 1 */
+  LPC_GPIO1->DIR    |=  (1UL <<  8);			/* Set Dir pin to ouput       */
+  LPC_GPIO1->DATA   &= ~(1UL <<  8);            /* Initialize Dir to RX mode  */
 
-  LPC_UART->LCR = 0x83;             /* 8 bits, no Parity, 1 Stop bit */
-  regVal = LPC_SYSCON->UARTCLKDIV;
-
-  Fdiv = (((SystemCoreClock*LPC_SYSCON->SYSAHBCLKDIV)/regVal)/16)/baudrate ;	/*baud rate */
-
-  LPC_UART->DLM = Fdiv / 256;							
-  LPC_UART->DLL = Fdiv % 256;
-  LPC_UART->LCR = 0x03;		/* DLAB = 0 */
-  LPC_UART->FCR = 0x07;		/* Enable and reset TX and RX FIFO. */
+  if(baudrate == _1MHZ)
+  {
+	  /* configure UART0 */
+	  //Baud = PCLK/(16*(DLL+DLM<<8)*(1+DIV/MUL))
+	  LPC_SYSCON->SYSAHBCLKCTRL |=  (1UL << 12);    /* Enable clock to UART       */
+	  LPC_SYSCON->UARTCLKDIV     =  (2UL <<  0);    /* UART clock =  CCLK / 2  = 24MHz   */
+	
+	  LPC_UART->LCR = 0x83;                   /* 8 bits, no Parity, 1 Stop bit    */
+	  LPC_UART->DLL = 1;                      /* 1,000,000 Baud Rate @ 24.0 MHZ PCLK */
+	  LPC_UART->FDR = 0x21;                   /* FR 1.5, DIVADDVAL 1, MULVAL 2  */
+	  LPC_UART->DLM = 0;                      /* High divisor latch = 0           */
+	  LPC_UART->LCR = 0x03;                   /* DLAB = 0                         */
+  }
+  else
+  {
+	  /* configure UART0 */
+	  LPC_SYSCON->SYSAHBCLKCTRL |=  (1UL << 12);    /* Enable clock to UART       */
+	  LPC_SYSCON->UARTCLKDIV     =  (4UL <<  0);    /* UART clock =  CCLK / 4     */
+	
+	  LPC_UART->LCR = 0x83;                   /* 8 bits, no Parity, 1 Stop bit    */
+	  LPC_UART->DLL = 4;                      /* 115200 Baud Rate @ 12.0 MHZ PCLK */
+	  LPC_UART->FDR = 0x85;                   /* FR 1.627, DIVADDVAL 5, MULVAL 8  */
+	  LPC_UART->DLM = 0;                      /* High divisor latch = 0           */
+	  LPC_UART->LCR = 0x03;                   /* DLAB = 0                         */
+  }
+  LPC_UART->FCR = 0x07;		/* Enable and reset TX and RX FIFO. */ 
 
   /* Read to clear the line status. */
   regVal = LPC_UART->LSR;
@@ -193,9 +212,9 @@ void UARTInit(uint32_t baudrate)
 
 #if CONFIG_UART_ENABLE_INTERRUPT==1
 #if CONFIG_UART_ENABLE_TX_INTERRUPT==1
-  LPC_UART->IER = IER_RBR | IER_THRE | IER_RLS;	/* Enable UART interrupt */
+  LPC_UART->IER = IER_RBR | IER_THRE | IER_RLS;	/* Enable UART RX/TX interrupt */
 #else
-  LPC_UART->IER = IER_RBR | IER_RLS;	/* Enable UART interrupt */
+  LPC_UART->IER = IER_RBR | IER_RLS;	/* Enable RX UART interrupt */
 #endif
 #endif
   return;
@@ -231,6 +250,45 @@ void UARTSend(uint8_t *BufferPtr, uint32_t Length)
   }
   return;
 }
+
+int UARTAvailable(void)
+{
+	return UARTCount;  
+}
+
+int UARTPeek(void)
+{
+ 	return UARTBuffer[0];
+}
+
+
+
+/*----------------------------------------------------------------------------
+  Write character to Serial Port
+ *----------------------------------------------------------------------------*/
+int sendchar (int c) {
+  
+  while (!(LPC_UART->LSR & 0x20));
+  LPC_UART->THR = c;
+  
+  return (c);
+}
+
+
+/*----------------------------------------------------------------------------
+  Read character from Serial Port   (blocking read)
+ *----------------------------------------------------------------------------*/
+int getkey (void) {
+  int key, i;	
+  if(UARTCount < 1) return -1;
+
+  key = UARTBuffer[0];	  
+  for(i=0;i<UARTCount;i++) UARTBuffer[i] = UARTBuffer[i+1];
+  UARTCount--;
+  
+  return key;
+}			  
+
 #endif
 
 /******************************************************************************

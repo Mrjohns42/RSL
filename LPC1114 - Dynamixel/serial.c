@@ -29,7 +29,7 @@ void SER_init (void) {
   LPC_IOCON->PIO1_7  =  (1UL <<  0);            /* P1.7 is TxD                */
   LPC_IOCON->PIO1_8  =  (1UL <<  0);			/* P1.8 is Dir                */
   LPC_GPIO1->DIR    |=  (1UL <<  8);			/* Set Dir pin to ouput       */
-  LPC_GPIO1->DATA   &= ~(1UL <<  8);            /* Initialize Dir to RX mode     */
+  LPC_GPIO1->DATA   &= ~(1UL <<  8);            /* Initialize Dir to RX mode  */
   
   /* configure UART0 */
   //Baud = PCLK/(16*(DLL+DLM<<8)*(1+DIV/MUL))
@@ -48,10 +48,10 @@ void SER_init (void) {
   Write character to Serial Port
  *----------------------------------------------------------------------------*/
 int sendchar (int c) {
-  LPC_GPIO1->DATA |= (1<<8);
+  
   while (!(LPC_UART->LSR & 0x20));
   LPC_UART->THR = c;
-  LPC_GPIO1->DATA &= ~(1<<8);
+  
   return (c);
 }
 

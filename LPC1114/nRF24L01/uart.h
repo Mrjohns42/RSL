@@ -13,6 +13,9 @@
 
 #if CONFIG_ENABLE_DRIVER_UART==1
 
+#define _100KHZ 0x00
+#define _1MHZ 0x01
+
 #define RS485_ENABLED		0
 #define TX_INTERRUPT		0		/* 0 if TX uses polling, 1 interrupt driven. */
 #define MODEM_TEST			0
@@ -36,7 +39,7 @@
 #define LSR_TEMT	0x40
 #define LSR_RXFE	0x80
 
-#define BUFSIZE		0x40
+#define UARTBUFSIZE		0x40
 
 /* RS485 mode definition. */
 #define RS485_NMMEN		(0x1<<0)
@@ -50,6 +53,10 @@ void ModemInit( void );
 void UARTInit(uint32_t Baudrate);
 void UART_IRQHandler(void);
 void UARTSend(uint8_t *BufferPtr, uint32_t Length);
+int UARTAvailable(void);
+int UARTPeek(void);
+int sendchar(int c);
+int getkey(void); 
 
 #endif
 #endif /* end __UART_H */

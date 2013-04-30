@@ -17,5 +17,9 @@
 #define CONFIG_ENABLE_DRIVER_GPIO						0
 #define CONFIG_ENABLE_DRIVER_I2C						1
 #define CONFIG_ENABLE_DRIVER_TIMER32                    1
+#define CONFIG_ENABLE_DRIVER_UART                       1
+#define CONFIG_UART_ENABLE_INTERRUPT                    1
+#define CONFIG_UART_ENABLE_TX_INTERRUPT				    0
+#define CONFIG_UART_DEFAULT_UART_IRQHANDLER             1
  /* DRIVER_CONFIG_H_ */
 #endif

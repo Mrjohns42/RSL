@@ -426,6 +426,16 @@
               <FileType>1</FileType>
               <FilePath>.\Retarget.c</FilePath>
             </File>
+            <File>
+              <FileName>AX12.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\AX12.c</FilePath>
+            </File>
+            <File>
+              <FileName>AX12.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\AX12.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -507,11 +517,6 @@
               <FilePath>.\wdt.c</FilePath>
             </File>
             <File>
-              <FileName>Serial.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\serial\Serial.c</FilePath>
-            </File>
-            <File>
               <FileName>mpu6050.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\mpu6050.c</FilePath>
@@ -540,6 +545,11 @@
               <FileName>timer32.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\timer32.h</FilePath>
+            </File>
+            <File>
+              <FileName>uart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\uart.h</FilePath>
             </File>
           </Files>
         </Group>
