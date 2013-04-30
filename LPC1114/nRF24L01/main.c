@@ -1,13 +1,11 @@
 /*
- * @author
- * Copyright (C) 2012 Luis R. Hilario http://www.luisdigital.com
  *
- * SSP0 pins:   
- * MISO: P0.8
- * MOSI: P0.9
- * SCK : P0.6
- * CSN : P0.2
- * CE  : P0.3
+ * TELE_ROBO_MIMCRY 
+ * 
+ * ECE 395
+ * 
+ * Matthew Johnson
+ * Eric Badger
  */
 
 #include "driver_config.h"
